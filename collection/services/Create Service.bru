@@ -1,0 +1,29 @@
+meta {
+  name: Create Service
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/v1/database/services
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "name": "1111",
+      "alias": "1101111_MBPS",
+      "colorHex": "#FFFFF",
+      "status": "ACTIVE",
+      "description": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,38 @@
+meta {
+  name: Service pagination
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/v1/database/services?keyword
+  body: json
+  auth: bearer
+}
+
+params:query {
+  keyword: null
+  ~filter: [{"field": "id", "op": "EQ", "value": ["123"]}]
+  ~pagination: {"page":1, "limit":100}
+  ~sort: {"field":"id","direction":"DESC"}
+  ~filterStatus: null
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "name": "",
+      "alias": "",
+      "colorHex": "",
+      "description": "",
+      "status": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

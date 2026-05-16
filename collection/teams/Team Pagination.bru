@@ -1,0 +1,25 @@
+meta {
+  name: Team Pagination
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/v1/database/teams
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~keyword: test
+  ~filter: [{"field": "areaId", "op": "EQ", "value": ["1"]}]
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,32 @@
+meta {
+  name: create free text
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ispdev}}/v1/database/form-fields
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "activityId": "activity-1",
+    "categoryActivityId": "cat-activity-online",
+    "groupTitle": "Informasi Pelanggan",
+    "groupWeight": 1,
+    "fieldLabel": "Nama Lengkap",
+    "fieldType": "FREE_TEXT",
+    "fieldWeight": 1,
+    "isRequired": true,
+    "validationType": "text",
+    "description": "Masukkan nama lengkap pelanggan"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

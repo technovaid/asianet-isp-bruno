@@ -1,0 +1,16 @@
+meta {
+  name: get form field types
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{ispdev}}/v1/database/form-fields/info
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

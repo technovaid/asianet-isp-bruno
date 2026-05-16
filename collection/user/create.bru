@@ -1,0 +1,28 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{Host}}/v1/users/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "username":"dankom_bekasi",
+      "email": "dankom.kab.bekasi@asianet.co.id",
+      "phone": "",
+      "password": "Asianet1234",
+      "name": "dankom_bekasi",
+      "roleId": "Fieldtech",
+      "description": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

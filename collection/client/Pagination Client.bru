@@ -1,0 +1,20 @@
+meta {
+  name: Pagination Client
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/v1/database/clients
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

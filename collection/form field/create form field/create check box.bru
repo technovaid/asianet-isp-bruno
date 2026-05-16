@@ -1,0 +1,32 @@
+meta {
+  name: create check box
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{ispdev}}/v1/database/form-fields
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "activityId": "activity-1",
+    "groupTitle": "Kelengkapan",
+    "groupWeight": 4,
+    "fieldLabel": "Perangkat Terpasang",
+    "fieldType": "CHECKBOX",
+    "fieldOptions": ["Router", "ONT", "Kabel UTP", "Splitter", "Connector"],
+    "fieldWeight": 1,
+    "isRequired": true,
+    "metadataKey": "installed_devices",
+    "description": "Centang perangkat yang sudah terpasang"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

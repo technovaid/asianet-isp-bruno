@@ -1,0 +1,26 @@
+meta {
+  name: Sites Pagination
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/v1/database/sites
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~keyword: Example--
+  ~filter: [{"field": "areaId", "op": "EQ", "value": ["1"]}]
+  ~sort: {"field":"createdAt","direction":"DESC"}
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

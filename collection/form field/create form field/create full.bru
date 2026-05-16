@@ -1,0 +1,37 @@
+meta {
+  name: create full
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ispdev}}/v1/database/form-fields
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "activityId": "string",          // required
+    "groupTitle": "string",          // required
+    "groupWeight": 0,                // optional (int)
+    "fieldLabel": "string",          // required
+    "fieldType": "string",           // required
+    "fieldOptions": ["string"],      // optional (array of string)
+    "fieldWeight": 0,                // optional (int)
+    "isRequired": false,             // optional (bool)
+    "childFieldId": "string",       // optional (nullable)
+    "validationType": "string",     // optional (nullable)
+    "metadataKey": "string",        // optional (nullable)
+    "referenceKey": "string",       // optional (nullable)
+    "isRequiredReferenceKey": "string", // optional (nullable)
+    "description": "string",        // optional (nullable)
+    "clientId": "string"            // optional (nullable)
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

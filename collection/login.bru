@@ -1,0 +1,23 @@
+meta {
+  name: login
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{ispdev}}/v1/users/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "email": "admin",
+      "password": "Admin@123"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

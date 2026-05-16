@@ -1,0 +1,31 @@
+meta {
+  name: create number
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ispdev}}/v1/database/form-fields
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "activityId": "1",
+    "groupTitle": "Data Teknis",
+    "groupWeight": 2,
+    "fieldLabel": "Jumlah Port",
+    "fieldType": "NUMBER",
+    "fieldWeight": 1,
+    "isRequired": true,
+    "validationType": "number",
+    "description": "Masukkan jumlah port yang tersedia"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

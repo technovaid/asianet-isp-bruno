@@ -1,0 +1,36 @@
+meta {
+  name: Update Area
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{host}}/v1/database/areas/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: AREA-01K60MWADYSAC1RY9TF4X3YSP2
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "name": "RILL KAH ?",
+      "alias": "JKT",
+      "phoneNumber": "081234567890",
+      "email": "jkt@example.com",
+      "address": "Jl. Example No. 1, Jakarta",
+      "description": "Area Jakarta",
+      "status": "ACTIVE"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

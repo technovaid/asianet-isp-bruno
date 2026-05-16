@@ -1,0 +1,23 @@
+meta {
+  name: reschedule
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{local}}/v1/work-orders/change/reschedule/WO-01K890BE4N7E49DD0FX2B7EFSJ
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "slotId": "1",
+    "bookingAt": "2025-11-01T09:30:00+07:00"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

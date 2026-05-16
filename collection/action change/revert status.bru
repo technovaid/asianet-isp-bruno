@@ -1,0 +1,16 @@
+meta {
+  name: revert status
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{local}}/v1/work-orders/change/revert/WO-01K8ABCDE123456789XYZ
+  body: json
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Delete Service
+  type: http
+  seq: 1
+}
+
+delete {
+  url: http://localhost:8080/v1/database/services/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: SVC-01K4QPGPGCPEQN0X0TKCJCDB72
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

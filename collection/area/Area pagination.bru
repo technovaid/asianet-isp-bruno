@@ -1,0 +1,23 @@
+meta {
+  name: Area pagination
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{ispdev}}/v1/database/teams?keyword=dankom&pagination={"page":1,"limit":10}&filter=[{"field":"areaId","op":"EQ","value":["AREA-01K7H3X65GT105XTHQY4Q4WPCR"]}]&pagination={"page":1,"limit":100}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  keyword: dankom
+  pagination: {"page":1,"limit":10}
+  filter: [{"field":"areaId","op":"EQ","value":["AREA-01K7H3X65GT105XTHQY4Q4WPCR"]}]
+  pagination: {"page":1,"limit":100}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Delete Team
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{host}}/v1/database/teams/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: T-01K4T3AJ1EHWZXC4KY63SP879A
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "areaId": "AREA-01K4SWKG5F193TETVEYXSQQGJS",
+      "vendorName": "NOT KROBUS",
+      "name": "UPDATTE",
+      "status": "ACTIVE"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

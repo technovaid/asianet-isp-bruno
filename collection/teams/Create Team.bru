@@ -1,0 +1,29 @@
+meta {
+  name: Create Team
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{production}}/v1/database/teams
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjE5OTE3MzMsImlkIjoiMSJ9.4DNbU0FQaPzgmMYx_dLFsHZY2IZTtThLRv3CR7VfwZQ
+}
+
+body:json {
+  {       
+      "areaId": "AREA-01K8QHHST4J683ZQV4SJWPTYVV",
+      "name": "dankom_dkijakarta",
+    "vendorName": "DANKOM",
+      "status": "ACTIVE"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

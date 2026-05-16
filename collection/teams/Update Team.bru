@@ -1,0 +1,38 @@
+meta {
+  name: Update Team
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{host}}/v1/database/teams/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: T-01K4WN4WXYF1G5G1CTFKE1EF5E
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "userPicId": "USR-01K4WM5J1J703DTWVQ4WH6MKJR",
+      "areaId": "AREA-01K4SWKG5F193TETVEYXSQQGJS",
+      "vendorName": "NOT KROBUS",
+      "name": "UPDATTE",
+      "status": "ACTIVE",
+      "fieldTechIds": [
+          "USR-01K4WM5J1J703DTWVQ4WH6MKJR",
+          "USR-01K4WJMPQTT8C8F0JMKA437Z11"
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

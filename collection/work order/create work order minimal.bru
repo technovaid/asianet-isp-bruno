@@ -1,0 +1,47 @@
+meta {
+  name: create work order minimal
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{ispdev}}/v1/work-orders
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer <TOKEN>
+}
+
+body:json {
+  {
+    "billingId": "BILL-003",
+    "noWorkOrder": "12345",
+    "categoryActivityId": "categories-1",
+    "siteId": "site-001",
+    "teamId": "team-1",
+    "bookingAt": "2026-05-15T09:00:00+07:00",
+    "openedAt": "2026-05-15T09:00:00+07:00",
+    "description": "optional",
+    "properties": {
+      "fields": []
+    },
+    "siteAreaId": "AREA-01K8QHHSQHTVAC2NTSH1R7JVEQ",
+    "siteClientId": "CLIENT-01K7H3X6DF5VB2MPJV68BYP869",
+    "siteServiceId": "S-01K8QHHV2676H2APC62JFANE61",
+    "siteName": "Nama Site",
+    "sitePicName": "PIC Name",
+    "sitePicPhone": "08123xxxx",
+    "sitePicEmail": "pic@mail.com",
+    "siteLocation": {
+      "latitude": -6.2,
+      "longitude": 106.8
+    }
+  }
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

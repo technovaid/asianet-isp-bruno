@@ -1,0 +1,22 @@
+meta {
+  name: get form wo
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{ispdev}}/v1/work-orders/form?workOrderId=WO-01KRPHT98H69KNM08X8C1CT99N&activityId=activity-1&categoryActivityId=categories-2
+  body: none
+  auth: inherit
+}
+
+params:query {
+  workOrderId: WO-01KRPHT98H69KNM08X8C1CT99N
+  activityId: activity-1
+  categoryActivityId: categories-2
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,30 @@
+meta {
+  name: create date
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{ispdev}}/v1/database/form-fields
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "activityId": "1",
+    "groupTitle": "Jadwal",
+    "groupWeight": 3,
+    "fieldLabel": "Tanggal Instalasi",
+    "fieldType": "DATE",
+    "fieldWeight": 1,
+    "isRequired": true,
+    "description": "Pilih tanggal instalasi"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

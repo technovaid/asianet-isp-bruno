@@ -1,0 +1,37 @@
+meta {
+  name: Update Client
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{host}}/v1/database/clients/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: CLIENT-01K50YW9ZV8JX253MBKB4TSZ3Z
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "customerId": "123",
+      "name": "Jo111hn Doe",
+      "alias": "jdoe",
+      "phone": "555-1234",
+      "email": "jdoe@example.com",
+      "address": "123 Main St",
+      "description": "A sample client",
+      "status": "ACTIVE"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

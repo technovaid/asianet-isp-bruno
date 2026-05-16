@@ -1,0 +1,61 @@
+meta {
+  name: update wo
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{ispdev}}/v1/work-orders/WO-01KRQP835RER0ADM4M7VN8GMZY
+  body: json
+  auth: inherit
+}
+
+headers {
+  authorization: Bearer <TOKEN>
+  content-type: application/json
+}
+
+body:json {
+  {
+    "activityId": "activity-1",
+    "categoryActivityId": "categories-2",
+    "statusId": "status-1",
+    "properties": {
+      "fields": [
+        {
+          "fieldId": "ff-1",
+          "order": 1,
+          "value": "Budi Santoso"
+        },
+        {
+          "fieldId": "ff-4",
+          "order": 1,
+          "value": "081234567890"
+        },
+        {
+          "fieldId": "ff-3",
+          "order": 1,
+          "value": "TERHUBUNG"
+        },
+        {
+          "fieldId": "ff-2",
+          "order": 1,
+          "value": "Pelanggan setuju dijadwalkan follow up besok"
+        },
+        {
+          "fieldId": "ff-5",
+          "order": 1,
+          "fileIds": [
+            "FILE-01",
+            "FILE-02"
+          ]
+        }
+      ]
+    }
+  }
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

@@ -1,0 +1,26 @@
+meta {
+  name: post
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{production}}/v1/database/vendors
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjE5OTE3MzMsImlkIjoiMSJ9.4DNbU0FQaPzgmMYx_dLFsHZY2IZTtThLRv3CR7VfwZQ
+}
+
+body:json {
+  {
+    "name": "Dankom"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,72 @@
+meta {
+  name: fileupload
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{ispdev}}/v1/file-upload
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  file: @file(C:\Users\Alfredo\Downloads\FILE-01KPYX896E00GBNB7420DRV8GS-1777006290.jpg)
+  fileType: IMAGE
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: example
+  
+  request: {
+    url: {{ispdev}}/v1/file-upload
+    method: POST
+    mode: multipartForm
+    body:multipart-form: {
+      file: @file(C:\Users\Alfredo\Downloads\FILE-01KPYX896E00GBNB7420DRV8GS-1777006290.jpg)
+      fileType: IMAGE
+    }
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      referrer-policy: strict-origin-when-cross-origin
+      strict-transport-security: max-age=315360000; includeSubdomains
+      x-content-type-options: nosniff
+      x-download-options: noopen
+      x-frame-options: DENY
+      x-request-id: REQ-01KRM1BW3WCD2E487CYBRHXAW8
+      x-server-id: jkt-pk-it-dc8-ispcollection
+      x-trace-id: TRC-01KRM1BW3WCD2E487CYCR0GETJ
+      x-xss-protection: 1; mode=block
+      date: Thu, 14 May 2026 20:03:07 GMT
+      content-length: 200
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "SUCCESS",
+          "code": "2000",
+          "data": {
+            "id": "01KRM1BWJC9ZXRWYNMF0K9NEQ9",
+            "fileName": "01KRM1BW8NHYK76X34MMFWVEKR.jpg",
+            "url": "http://localhost:8086/v1/media/token/TOKEN-01KRM1BWKN9ZCTQKFMCZ94M90A"
+          }
+        }
+      '''
+    }
+  }
+}

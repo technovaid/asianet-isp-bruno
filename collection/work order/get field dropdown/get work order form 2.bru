@@ -1,0 +1,21 @@
+meta {
+  name: get work order form 2
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{Host}}/v1/work-orders/form?workOrderId=WO-01KCN6BQ4P9ZP20VMFQXYJXKGN&workOrderStatusId=status-2
+  body: json
+  auth: inherit
+}
+
+params:query {
+  workOrderId: WO-01KCN6BQ4P9ZP20VMFQXYJXKGN
+  workOrderStatusId: status-2
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,22 @@
+meta {
+  name: change team
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{production}}/v1/work-orders/change/changeteam/WO-01KB22NTTJGVCB52HQ1PN7W5NQ
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "teamId": "T-01KAD7P2Q97SJKKARVRAB0F8KQ"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

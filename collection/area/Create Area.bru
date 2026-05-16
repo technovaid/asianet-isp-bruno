@@ -1,0 +1,32 @@
+meta {
+  name: Create Area
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/v1/database/areas
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+      "name": "UPDATE AREA",
+      "alias": "JKT",
+      "phoneNumber": "081234567890",
+      "email": "jkt@example.com",
+      "address": "Jl. Example No. 1, Jakarta",
+      "description": "Area Jakarta",
+      "status": "ACTIVE"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

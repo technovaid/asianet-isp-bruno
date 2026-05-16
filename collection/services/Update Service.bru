@@ -1,0 +1,30 @@
+meta {
+  name: Update Service
+  type: http
+  seq: 1
+}
+
+patch {
+  url: http://localhost:8080/v1/database/services/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: SVC-01K4QPGPGCPEQN0X0TKCJCDB72
+}
+
+body:json {
+  {
+      "name": "",
+      "alias": "110_MBPS",
+      "colorHex": "#FFFFF",
+      "status": "ACTIVE",
+      "description": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

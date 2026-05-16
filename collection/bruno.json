@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "isp utama",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

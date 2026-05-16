@@ -1,0 +1,48 @@
+meta {
+  name: Create Site
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/v1/database/sites
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "areaId": "AREA-01K63AYYHDM420WHAWX5GW7DFZ",
+    "clientId": "CLIENT-01K63B228SADAKW86VM9FT6RP3",
+    "serviceId": "SVC-01K63AWECY8348Q0N5TQ62SP6H",
+    "linkId": "LINK-202",
+    "name": "Site Example",
+    "picName": "John Doe",
+    "picPhone": "+628123456789",
+    "picEmail": "john.doe@example.com",
+    "province": "Jawa Barat",
+    "city": "Bandung",
+    "district": "Cicendo",
+    "ward": "Sukajadi",
+    "postalCode": "40161",
+    "address": "Jl. Example No. 123",
+    "description": "This is a sample site description.",
+    "location": {
+      "lat": -6.914744,
+      "long": 107.609810
+    },
+    "status": "ACTIVE",
+    "activeAt": "2025-09-13T08:00:00Z",
+    "createdAt": "2025-09-13T08:00:00Z",
+    "updatedAt": "2025-09-13T08:00:00Z"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

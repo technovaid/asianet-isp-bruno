@@ -1,0 +1,32 @@
+meta {
+  name: create dropdown
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{ispdev}}/v1/database/form-fields
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "activityId": "1",
+    "groupTitle": "Status Perangkat",
+    "groupWeight": 5,
+    "fieldLabel": "Kondisi ONT",
+    "fieldType": "DROPDOWN",
+    "fieldOptions": ["Baik", "Rusak Ringan", "Rusak Berat", "Tidak Ada"],
+    "fieldWeight": 1,
+    "isRequired": true,
+    "metadataKey": "ont_condition",
+    "description": "Pilih kondisi ONT di lokasi"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
