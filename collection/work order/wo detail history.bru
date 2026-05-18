@@ -1,11 +1,11 @@
 meta {
   name: wo detail history
   type: http
-  seq: 8
+  seq: 7
 }
 
 get {
-  url: {{ispdev}}/v1/work-orders/histories/WO-01KRPHT98H69KNM08X8C1CT99N
+  url: {{ispdev}}/v1/work-orders/histories/WO-01KRQP835RER0ADM4M7VN8GMZY
   body: none
   auth: inherit
 }
@@ -13,4 +13,189 @@ get {
 settings {
   encodeUrl: true
   timeout: 0
+}
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{ispdev}}/v1/work-orders/histories/WO-01KRQP835RER0ADM4M7VN8GMZY
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      referrer-policy: strict-origin-when-cross-origin
+      strict-transport-security: max-age=315360000; includeSubdomains
+      x-content-type-options: nosniff
+      x-download-options: noopen
+      x-frame-options: DENY
+      x-request-id: REQ-01KRXPF3WQPEC68EV2D7C3VB09
+      x-server-id: jkt-pk-it-dc8-ispcollection
+      x-trace-id: TRC-01KRXPF3WQPEC68EV2D9KCQ5SM
+      x-xss-protection: 1; mode=block
+      date: Mon, 18 May 2026 14:05:03 GMT
+      transfer-encoding: chunked
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "SUCCESS",
+          "code": "2000",
+          "data": [
+            {
+              "id": "01KRQP8362NDY7WP38CY57GFQ8",
+              "status": {
+                "id": "",
+                "name": "H+7",
+                "initial": "H+7",
+                "description": null
+              },
+              "team": {
+                "id": "team-1",
+                "externalId": 0,
+                "name": "tim jaya",
+                "fieldTechs": null
+              },
+              "groupFields": [],
+              "interactionType": "workOrderSalesInteraction",
+              "channel": "FIELD_VISIT",
+              "relatedEntityId": "WO-01KRQP835RER0ADM4M7VN8GMZY",
+              "interactionItems": [
+                {
+                  "id": "ff-1",
+                  "name": "Nama Pelanggan",
+                  "group": "Profil Pelanggan",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "Budi Santoso"
+                },
+                {
+                  "id": "ff-4",
+                  "name": "Nomor Telepon",
+                  "group": "Profil Pelanggan",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "081234567890"
+                },
+                {
+                  "id": "ff-3",
+                  "name": "Hasil Panggilan",
+                  "group": "Hasil Kontak",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "TERHUBUNG"
+                },
+                {
+                  "id": "ff-2",
+                  "name": "Catatan Call",
+                  "group": "Hasil Kontak",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "Pelanggan setuju dijadwalkan follow up besok"
+                },
+                {
+                  "id": "ff-5",
+                  "name": "Bukti Interaksi",
+                  "group": "Bukti",
+                  "valueType": "attachment",
+                  "order": 1
+                },
+                {
+                  "id": "ff-1",
+                  "name": "Nama Pelanggan",
+                  "group": "Profil Pelanggan",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "Budi Santoso"
+                },
+                {
+                  "id": "ff-4",
+                  "name": "Nomor Telepon",
+                  "group": "Profil Pelanggan",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "081234567890"
+                },
+                {
+                  "id": "ff-3",
+                  "name": "Hasil Panggilan",
+                  "group": "Hasil Kontak",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "TERHUBUNG"
+                },
+                {
+                  "id": "ff-2",
+                  "name": "Catatan Call",
+                  "group": "Hasil Kontak",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "Pelanggan setuju dijadwalkan follow up besok"
+                },
+                {
+                  "id": "ff-5",
+                  "name": "Bukti Interaksi",
+                  "group": "Bukti",
+                  "valueType": "attachment",
+                  "order": 1
+                },
+                {
+                  "id": "ff-1",
+                  "name": "Nama Pelanggan",
+                  "group": "Profil Pelanggan",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "Budi Santoso"
+                },
+                {
+                  "id": "ff-4",
+                  "name": "Nomor Telepon",
+                  "group": "Profil Pelanggan",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "081234567890"
+                },
+                {
+                  "id": "ff-3",
+                  "name": "Hasil Panggilan",
+                  "group": "Hasil Kontak",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "TERHUBUNG"
+                },
+                {
+                  "id": "ff-2",
+                  "name": "Catatan Call",
+                  "group": "Hasil Kontak",
+                  "valueType": "string",
+                  "order": 1,
+                  "value": "Pelanggan setuju dijadwalkan follow up besok"
+                },
+                {
+                  "id": "ff-5",
+                  "name": "Bukti Interaksi",
+                  "group": "Bukti",
+                  "valueType": "attachment",
+                  "order": 1
+                }
+              ],
+              "updatedAt": "2026-05-16T06:05:46Z",
+              "updatedBy": "Administrator",
+              "duration": 55
+            }
+          ]
+        }
+      '''
+    }
+  }
 }

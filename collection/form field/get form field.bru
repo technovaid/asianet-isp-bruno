@@ -14,3 +14,853 @@ settings {
   encodeUrl: true
   timeout: 0
 }
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{ispdev}}/v1/database/form-fields
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      referrer-policy: strict-origin-when-cross-origin
+      strict-transport-security: max-age=315360000; includeSubdomains
+      x-content-type-options: nosniff
+      x-download-options: noopen
+      x-frame-options: DENY
+      x-request-id: REQ-01KRXR95RV0TSZPBNHK5VC4HA7
+      x-server-id: jkt-pk-it-dc8-ispcollection
+      x-trace-id: TRC-01KRXR95RV0TSZPBNHK8RDZ8KS
+      x-xss-protection: 1; mode=block
+      date: Mon, 18 May 2026 14:36:45 GMT
+      transfer-encoding: chunked
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "SUCCESS",
+          "code": "2000",
+          "data": [
+            {
+              "id": "ff-1",
+              "form_id": {
+                "String": "form-call-online",
+                "Valid": true
+              },
+              "group_title": "Profil Pelanggan",
+              "group_weight": 1,
+              "field_description": {
+                "String": "Nama pelanggan saat verifikasi telepon",
+                "Valid": true
+              },
+              "field_label": "Nama Pelanggan",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "customer_name",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-12",
+              "form_id": {
+                "String": "form-whatsapp-online",
+                "Valid": true
+              },
+              "group_title": "Profil Kontak",
+              "group_weight": 1,
+              "field_description": {
+                "String": "Nama kontak WhatsApp",
+                "Valid": true
+              },
+              "field_label": "Nama Kontak WA",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "wa_contact_name",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-9",
+              "form_id": {
+                "String": "form-visit-offline",
+                "Valid": true
+              },
+              "group_title": "Kunjungan",
+              "group_weight": 1,
+              "field_description": {
+                "String": "Nama PIC yang ditemui di lokasi",
+                "Valid": true
+              },
+              "field_label": "Nama PIC Lokasi",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "visit_pic_name",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-13",
+              "form_id": {
+                "String": "form-whatsapp-online",
+                "Valid": true
+              },
+              "group_title": "Profil Kontak",
+              "group_weight": 1,
+              "field_description": {
+                "String": "Nomor WhatsApp tujuan",
+                "Valid": true
+              },
+              "field_label": "Nomor WhatsApp",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 2,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "wa_number",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-4",
+              "form_id": {
+                "String": "form-call-online",
+                "Valid": true
+              },
+              "group_title": "Profil Pelanggan",
+              "group_weight": 1,
+              "field_description": {
+                "String": "Nomor yang dihubungi",
+                "Valid": true
+              },
+              "field_label": "Nomor Telepon",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 2,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "customer_phone",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-7",
+              "form_id": {
+                "String": "form-visit-offline",
+                "Valid": true
+              },
+              "group_title": "Kunjungan",
+              "group_weight": 1,
+              "field_description": {
+                "String": "Titik lokasi saat kunjungan",
+                "Valid": true
+              },
+              "field_label": "Lokasi Kunjungan",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 2,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "",
+                "Valid": false
+              },
+              "metadata_key": {
+                "String": "visit_location_label",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:29:57Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-16",
+              "form_id": {
+                "String": "form-whatsapp-online",
+                "Valid": true
+              },
+              "group_title": "Pesan",
+              "group_weight": 2,
+              "field_description": {
+                "String": "Template pesan yang digunakan",
+                "Valid": true
+              },
+              "field_label": "Template Pesan",
+              "field_type": "DROPDOWN",
+              "field_options": [
+                "TAGIHAN",
+                "REMINDER",
+                "FOLLOW UP"
+              ],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "wa_template",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-3",
+              "form_id": {
+                "String": "form-call-online",
+                "Valid": true
+              },
+              "group_title": "Hasil Kontak",
+              "group_weight": 2,
+              "field_description": {
+                "String": "Hasil utama panggilan",
+                "Valid": true
+              },
+              "field_label": "Hasil Panggilan",
+              "field_type": "DROPDOWN",
+              "field_options": [
+                "TERHUBUNG",
+                "TIDAK TERHUBUNG",
+                "MINTA DIHUBUNGI ULANG"
+              ],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "call_outcome",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-6",
+              "form_id": {
+                "String": "form-visit-offline",
+                "Valid": true
+              },
+              "group_title": "Teknis",
+              "group_weight": 2,
+              "field_description": {
+                "String": "Checklist perangkat yang dicek",
+                "Valid": true
+              },
+              "field_label": "Perangkat Dicek",
+              "field_type": "CHECKBOX",
+              "field_options": [
+                "Router",
+                "ONT",
+                "Kabel UTP",
+                "Adaptor Power",
+                "Konektor"
+              ],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "",
+                "Valid": false
+              },
+              "metadata_key": {
+                "String": "visit_devices_checked",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-10",
+              "form_id": {
+                "String": "form-visit-offline",
+                "Valid": true
+              },
+              "group_title": "Teknis",
+              "group_weight": 2,
+              "field_description": {
+                "String": "Kondisi signal saat kunjungan",
+                "Valid": true
+              },
+              "field_label": "Kondisi Signal",
+              "field_type": "DROPDOWN",
+              "field_options": [
+                "BAIK",
+                "SEDANG",
+                "BURUK"
+              ],
+              "field_weight": 2,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "",
+                "Valid": false
+              },
+              "metadata_key": {
+                "String": "visit_signal_quality",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-14",
+              "form_id": {
+                "String": "form-whatsapp-online",
+                "Valid": true
+              },
+              "group_title": "Pesan",
+              "group_weight": 2,
+              "field_description": {
+                "String": "Respon dari pelanggan",
+                "Valid": true
+              },
+              "field_label": "Respon Pelanggan",
+              "field_type": "DROPDOWN",
+              "field_options": [
+                "RESPON POSITIF",
+                "BELUM RESPON",
+                "NOMOR TIDAK AKTIF"
+              ],
+              "field_weight": 2,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "wa_response",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-2",
+              "form_id": {
+                "String": "form-call-online",
+                "Valid": true
+              },
+              "group_title": "Hasil Kontak",
+              "group_weight": 2,
+              "field_description": {
+                "String": "Catatan dari percakapan",
+                "Valid": true
+              },
+              "field_label": "Catatan Call",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 2,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "call_notes",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:29:57Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-15",
+              "form_id": {
+                "String": "form-whatsapp-online",
+                "Valid": true
+              },
+              "group_title": "Bukti",
+              "group_weight": 3,
+              "field_description": {
+                "String": "Lampirkan screenshot percakapan",
+                "Valid": true
+              },
+              "field_label": "Screenshot Chat",
+              "field_type": "MULTIPLE_UPLOAD_IMAGE",
+              "field_options": [],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "",
+                "Valid": false
+              },
+              "metadata_key": {
+                "String": "wa_screenshots",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:29:57Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-5",
+              "form_id": {
+                "String": "form-call-online",
+                "Valid": true
+              },
+              "group_title": "Bukti",
+              "group_weight": 3,
+              "field_description": {
+                "String": "Upload bukti bila diperlukan",
+                "Valid": true
+              },
+              "field_label": "Bukti Interaksi",
+              "field_type": "UPLOAD_IMAGE",
+              "field_options": [],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "",
+                "Valid": false
+              },
+              "metadata_key": {
+                "String": "call_proof_file",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:29:57Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-8",
+              "form_id": {
+                "String": "form-visit-offline",
+                "Valid": true
+              },
+              "group_title": "Dokumentasi",
+              "group_weight": 3,
+              "field_description": {
+                "String": "Dokumentasi foto onsite",
+                "Valid": true
+              },
+              "field_label": "Foto Onsite",
+              "field_type": "MULTIPLE_CAMERA",
+              "field_options": [],
+              "field_weight": 1,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "",
+                "Valid": false
+              },
+              "metadata_key": {
+                "String": "visit_onsite_photos",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:29:57Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            },
+            {
+              "id": "ff-11",
+              "form_id": {
+                "String": "form-visit-offline",
+                "Valid": true
+              },
+              "group_title": "Dokumentasi",
+              "group_weight": 3,
+              "field_description": {
+                "String": "Ringkasan hasil kunjungan",
+                "Valid": true
+              },
+              "field_label": "Ringkasan Kunjungan",
+              "field_type": "FREE_TEXT",
+              "field_options": [],
+              "field_weight": 2,
+              "is_required": false,
+              "child_field_id": {
+                "String": "",
+                "Valid": false
+              },
+              "validation_type": {
+                "String": "text",
+                "Valid": true
+              },
+              "metadata_key": {
+                "String": "visit_summary",
+                "Valid": true
+              },
+              "reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "is_required_reference_key": {
+                "String": "",
+                "Valid": false
+              },
+              "client_id": {
+                "String": "",
+                "Valid": false
+              },
+              "status": "ACTIVE",
+              "created_at": "2026-05-16T05:16:17Z",
+              "updated_at": "2026-05-16T05:32:04Z",
+              "deleted_at": {
+                "Time": "0001-01-01T00:00:00Z",
+                "Valid": false
+              }
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

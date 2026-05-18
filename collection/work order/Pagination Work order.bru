@@ -5,16 +5,158 @@ meta {
 }
 
 get {
-  url: {{ispdev}}/v1/work-orders?filter=[{"field": "activity", "op": "EQ", "value": [""]}]
+  url: {{ispdev}}/v1/work-orders?keyword=&page=1&limit=10&filter=[]&sort={}
   body: none
   auth: inherit
 }
 
 params:query {
-  filter: [{"field": "activity", "op": "EQ", "value": [""]}]
+  keyword: 
+  page: 1
+  limit: 10
+  filter: []
+  sort: {}
 }
 
 settings {
   encodeUrl: true
   timeout: 0
+}
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{ispdev}}/v1/work-orders?keyword=&page=1&limit=10&filter=[]&sort={}
+    method: GET
+    mode: none
+    params:query: {
+      keyword: 
+      page: 1
+      limit: 10
+      filter: []
+      sort: {}
+    }
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      referrer-policy: strict-origin-when-cross-origin
+      strict-transport-security: max-age=315360000; includeSubdomains
+      x-content-type-options: nosniff
+      x-download-options: noopen
+      x-frame-options: DENY
+      x-request-id: REQ-01KRXQHYFT4V28MYW3SAPYBDSP
+      x-server-id: jkt-pk-it-dc8-ispcollection
+      x-trace-id: TRC-01KRXQHYFT4V28MYW3SDFJZAD4
+      x-xss-protection: 1; mode=block
+      date: Mon, 18 May 2026 14:24:04 GMT
+      content-length: 1446
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "SUCCESS",
+          "code": "2000",
+          "data": {
+            "meta": {
+              "page": 1,
+              "limit": 10,
+              "totalItems": 1,
+              "totalPages": 1
+            },
+            "items": [
+              {
+                "id": "WO-01KRQP835RER0ADM4M7VN8GMZY",
+                "noWorkOrder": "12345",
+                "lastLog": "CALL",
+                "timing": "H+7",
+                "ticketNumber": null,
+                "billingId": null,
+                "billingAmount": null,
+                "accountId": null,
+                "status": {
+                  "id": "status-1",
+                  "name": "UNPAID",
+                  "initial": "UNPAID",
+                  "nextStatus": "PAID",
+                  "description": null
+                },
+                "categoryActivity": {
+                  "id": "categories-1",
+                  "name": "OFFLINE",
+                  "initial": ""
+                },
+                "client": {
+                  "id": "CLIENT-01K7H3X6DF5VB2MPJV68BYP869",
+                  "customerId": "32",
+                  "name": "CITRANET",
+                  "alias": "CITRANET",
+                  "email": "",
+                  "phone": "",
+                  "address": "",
+                  "description": ""
+                },
+                "area": {
+                  "id": "AREA-01K8QHHSQHTVAC2NTSH1R7JVEQ",
+                  "name": "ACEH"
+                },
+                "site": {
+                  "id": "site-01KRQP8343TM2B22EHJ098NH8Q",
+                  "name": "Nama Site",
+                  "address": "",
+                  "location": {
+                    "lat": 0,
+                    "long": 0
+                  },
+                  "email": "pic@mail.com",
+                  "phone": "08123xxxx",
+                  "picName": "PIC Name",
+                  "service": {
+                    "id": "S-01K8QHHV2676H2APC62JFANE61",
+                    "name": "SILVER",
+                    "alias": "5Mbps",
+                    "colorHex": "808080",
+                    "status": "ACTIVE",
+                    "description": "5 Mbps"
+                  }
+                },
+                "customerName": "PIC Name",
+                "team": {
+                  "id": "team-1",
+                  "externalId": 1,
+                  "name": "tim jaya",
+                  "fieldTechs": []
+                },
+                "vendorName": "Dankom",
+                "bookingAt": "2026-05-15T02:00:00Z",
+                "openedAt": "2026-05-15T02:00:00Z",
+                "description": "optional",
+                "metadata": {
+                  "service_alias": "5Mbps",
+                  "team_name": "tim jaya"
+                },
+                "createdBy": "Administrator",
+                "updatedBy": null,
+                "createdAt": "2026-05-16T06:05:46Z",
+                "updatedAt": "2026-05-16T06:05:46Z",
+                "deletedAt": null,
+                "duration": 0,
+                "latestHistory": null,
+                "histories": null
+              }
+            ]
+          }
+        }
+      '''
+    }
+  }
 }

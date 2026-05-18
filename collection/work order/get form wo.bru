@@ -1,17 +1,17 @@
 meta {
   name: get form wo
   type: http
-  seq: 9
+  seq: 8
 }
 
 get {
-  url: {{ispdev}}/v1/work-orders/form?workOrderId=WO-01KRPHT98H69KNM08X8C1CT99N&activityId=activity-1&categoryActivityId=categories-2
+  url: {{ispdev}}/v1/work-orders/form?workOrderId=WO-01KRQP835RER0ADM4M7VN8GMZY&activityId=activity-1&categoryActivityId=categories-2
   body: none
   auth: inherit
 }
 
 params:query {
-  workOrderId: WO-01KRPHT98H69KNM08X8C1CT99N
+  workOrderId: WO-01KRQP835RER0ADM4M7VN8GMZY
   activityId: activity-1
   categoryActivityId: categories-2
 }
@@ -19,4 +19,105 @@ params:query {
 settings {
   encodeUrl: true
   timeout: 0
+}
+
+example {
+  name: 200 ok
+  
+  request: {
+    url: {{ispdev}}/v1/work-orders/form?workOrderId=WO-01KRQP835RER0ADM4M7VN8GMZY&activityId=activity-1&categoryActivityId=categories-2
+    method: GET
+    mode: none
+    params:query: {
+      workOrderId: WO-01KRQP835RER0ADM4M7VN8GMZY
+      activityId: activity-1
+      categoryActivityId: categories-2
+    }
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      referrer-policy: strict-origin-when-cross-origin
+      strict-transport-security: max-age=315360000; includeSubdomains
+      x-content-type-options: nosniff
+      x-download-options: noopen
+      x-frame-options: DENY
+      x-request-id: REQ-01KRXQKFAT7HVNB4D2M8D5WMJB
+      x-server-id: jkt-pk-it-dc8-ispcollection
+      x-trace-id: TRC-01KRXQKFAT7HVNB4D2MA00PZKE
+      x-xss-protection: 1; mode=block
+      date: Mon, 18 May 2026 14:24:54 GMT
+      content-length: 859
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "SUCCESS",
+          "code": "2000",
+          "data": {
+            "interactionType": "workOrderSalesInteraction",
+            "channel": "FIELD_VISIT",
+            "relatedEntityId": "WO-01KRQP835RER0ADM4M7VN8GMZY",
+            "activityId": "activity-1",
+            "statusId": "status-1",
+            "interactionItems": [
+              {
+                "id": "ff-1",
+                "name": "Nama Pelanggan",
+                "group": "Profil Pelanggan",
+                "valueType": "string",
+                "mandatory": false,
+                "order": 1
+              },
+              {
+                "id": "ff-4",
+                "name": "Nomor Telepon",
+                "group": "Profil Pelanggan",
+                "valueType": "string",
+                "mandatory": false,
+                "order": 1
+              },
+              {
+                "id": "ff-3",
+                "name": "Hasil Panggilan",
+                "group": "Hasil Kontak",
+                "valueType": "string",
+                "allowedValues": [
+                  "TERHUBUNG",
+                  "TIDAK TERHUBUNG",
+                  "MINTA DIHUBUNGI ULANG"
+                ],
+                "mandatory": false,
+                "order": 1
+              },
+              {
+                "id": "ff-2",
+                "name": "Catatan Call",
+                "group": "Hasil Kontak",
+                "valueType": "string",
+                "mandatory": false,
+                "order": 1
+              },
+              {
+                "id": "ff-5",
+                "name": "Bukti Interaksi",
+                "group": "Bukti",
+                "valueType": "attachment",
+                "mandatory": false,
+                "order": 1
+              }
+            ]
+          }
+        }
+      '''
+    }
+  }
 }

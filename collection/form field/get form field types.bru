@@ -14,3 +14,113 @@ settings {
   encodeUrl: true
   timeout: 0
 }
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{ispdev}}/v1/database/form-fields/info
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      referrer-policy: strict-origin-when-cross-origin
+      strict-transport-security: max-age=315360000; includeSubdomains
+      x-content-type-options: nosniff
+      x-download-options: noopen
+      x-frame-options: DENY
+      x-request-id: REQ-01KRXNRS2G8XCB472M53G2KG25
+      x-server-id: jkt-pk-it-dc8-ispcollection
+      x-trace-id: TRC-01KRXNRS2G8XCB472M54DXWYN4
+      x-xss-protection: 1; mode=block
+      date: Mon, 18 May 2026 13:52:51 GMT
+      content-length: 732
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "SUCCESS",
+          "code": "2000",
+          "data": {
+            "fieldTypes": [
+              {
+                "value": "FREE_TEXT",
+                "label": "Single Text"
+              },
+              {
+                "value": "NUMBER",
+                "label": "Number"
+              },
+              {
+                "value": "DATE",
+                "label": "Date"
+              },
+              {
+                "value": "UPLOAD_IMAGE",
+                "label": "Picture"
+              },
+              {
+                "value": "MULTIPLE_UPLOAD_IMAGE",
+                "label": "Multiple Picture"
+              },
+              {
+                "value": "CAMERA",
+                "label": "Camera"
+              },
+              {
+                "value": "MULTIPLE_CAMERA",
+                "label": "Multiple Camera"
+              },
+              {
+                "value": "DROPDOWN",
+                "label": "Dropdown"
+              },
+              {
+                "value": "CHECKBOX",
+                "label": "Multi Checkbox"
+              },
+              {
+                "value": "CAMERA_OR_UPLOAD_IMAGE",
+                "label": "Camera Or Upload"
+              }
+            ],
+            "categories": [
+              {
+                "id": "categories-1",
+                "label": "OFFLINE"
+              },
+              {
+                "id": "categories-2",
+                "label": "ONLINE"
+              }
+            ],
+            "activities": [
+              {
+                "id": "activity-1",
+                "label": "CALL"
+              },
+              {
+                "id": "activity-2",
+                "label": "VISIT"
+              },
+              {
+                "id": "activity-3",
+                "label": "WHATSAPP"
+              }
+            ]
+          }
+        }
+      '''
+    }
+  }
+}

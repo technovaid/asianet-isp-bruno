@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{ispdev}}/v1/database/form-fields/01KRP2CM8JKCEG85FC5XB9T7EQ
+  url: {{ispdev}}/v1/database/form-fields/ff-1
   body: none
   auth: inherit
 }
@@ -13,4 +13,95 @@ get {
 settings {
   encodeUrl: true
   timeout: 0
+}
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{ispdev}}/v1/database/form-fields/ff-1
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      content-type: application/json; charset=utf-8
+      referrer-policy: strict-origin-when-cross-origin
+      strict-transport-security: max-age=315360000; includeSubdomains
+      x-content-type-options: nosniff
+      x-download-options: noopen
+      x-frame-options: DENY
+      x-request-id: REQ-01KRXRBA6D6537C0CJXVMWVTP1
+      x-server-id: jkt-pk-it-dc8-ispcollection
+      x-trace-id: TRC-01KRXRBA6D6537C0CJXXZXW29Y
+      x-xss-protection: 1; mode=block
+      date: Mon, 18 May 2026 14:37:55 GMT
+      content-length: 794
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "SUCCESS",
+          "code": "2000",
+          "data": {
+            "id": "ff-1",
+            "form_id": {
+              "String": "form-call-online",
+              "Valid": true
+            },
+            "group_title": "Profil Pelanggan",
+            "group_weight": 1,
+            "field_description": {
+              "String": "Nama pelanggan saat verifikasi telepon",
+              "Valid": true
+            },
+            "field_label": "Nama Pelanggan",
+            "field_type": "FREE_TEXT",
+            "field_options": [],
+            "field_weight": 1,
+            "is_required": false,
+            "child_field_id": {
+              "String": "",
+              "Valid": false
+            },
+            "validation_type": {
+              "String": "text",
+              "Valid": true
+            },
+            "metadata_key": {
+              "String": "customer_name",
+              "Valid": true
+            },
+            "reference_key": {
+              "String": "",
+              "Valid": false
+            },
+            "is_required_reference_key": {
+              "String": "",
+              "Valid": false
+            },
+            "client_id": {
+              "String": "",
+              "Valid": false
+            },
+            "status": "ACTIVE",
+            "created_at": "2026-05-16T05:16:17Z",
+            "updated_at": "2026-05-16T05:32:04Z",
+            "deleted_at": {
+              "Time": "0001-01-01T00:00:00Z",
+              "Valid": false
+            }
+          }
+        }
+      '''
+    }
+  }
 }

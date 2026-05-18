@@ -1,0 +1,26 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://10.11.26.4:9080/api/v1/crm/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "identifier": "admin@isp.local",
+    "password": "Admin123!"
+  }
+}
+
+settings {
+  encodeUrl: false
+}

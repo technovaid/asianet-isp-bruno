@@ -1,0 +1,22 @@
+meta {
+  name: get duning
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://10.11.26.4:9080/api/v5/billing/customerBill?pageSize=10&pageToken=0&startUpdatedAt=2026-05-17T00:00:00Z&endUpdatedAt=2026-05-17T23:59:59Z
+  body: none
+  auth: inherit
+}
+
+params:query {
+  pageSize: 10
+  pageToken: 0
+  startUpdatedAt: 2026-05-17T00:00:00Z
+  endUpdatedAt: 2026-05-17T23:59:59Z
+}
+
+settings {
+  encodeUrl: true
+}
