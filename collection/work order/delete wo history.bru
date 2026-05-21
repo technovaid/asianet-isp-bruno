@@ -1,0 +1,21 @@
+meta {
+  name: delete wo history
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{ispdev}}/v1/work-orders/histories/01KS4R2NZT7S7KDQNWGYZYCJC9
+  body: json
+  auth: inherit
+}
+
+headers {
+  authorization: Bearer <TOKEN>
+  content-type: application/json
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

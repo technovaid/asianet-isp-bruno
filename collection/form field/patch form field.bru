@@ -6,8 +6,52 @@ meta {
 
 patch {
   url: {{ispdev}}/v1/database/form-fields/01KRPDYH9DF8FY64HFCKXGHVP2
-  body: none
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "activityId": "activity-1",
+    "categoryActivityId": "categories-1",
+    "properties": {
+      "fields": [
+        {
+          "fieldId": "01KS4M607XZXRGXFRQP7497ZZ2",
+          "value": "Instalasi selesai tanpa kendala"
+        },
+        {
+          "fieldId": "01KS4M6083SF5567SDX36CCEVC",
+          "value": "3"
+        },
+        {
+          "fieldId": "01KS4M60893FEDHWD1BWFTPDAY",
+          "value": "2026-05-21"
+        },
+        {
+          "fieldId": "01KS4M608FN0HEQDS3H4M0N48A",
+          "values": ["Router", "Kabel LAN"]
+        },
+        {
+          "fieldId": "01KS4M608NS7JW84GJTVWAQQ58",
+          "value": "50 Mbps"
+        },
+        {
+          "fieldId": "01KS4M608V3ASKXDAG8FE8F5KD",
+          "fileId": "<file_upload_id>"
+        },
+        {
+          "fieldId": "01KS4M6097HB5MMZ6ZERYT2WP3",
+          "fileId": "<file_upload_id>"
+        },
+        {
+          "fieldId": "01KS4M609K3EABA0ZRK0PKAY0P",
+          "fileId": "<file_upload_id>"
+        }
+      ]
+    }
+  }
+  
 }
 
 settings {

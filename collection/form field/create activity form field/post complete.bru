@@ -1,0 +1,95 @@
+meta {
+  name: post complete
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ispdev}}/v1/database/form-fields/activity
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "categoryActivityId": "categories-1",
+    "activityName": "call",
+    "activityInitial": "INST",
+    "formTitle": "Form Instalasi",
+    "fields": [
+      {
+        "fieldLabel": "Catatan Teknisi",
+        "fieldType": "FREE_TEXT",
+        "fieldWeight": 1,
+        "isRequired": true,
+        "description": "Catatan tambahan dari teknisi"
+      },
+      {
+        "fieldLabel": "Jumlah Perangkat",
+        "fieldType": "NUMBER",
+        "fieldWeight": 2,
+        "isRequired": true,
+        "validationType": "positive_integer"
+      },
+      {
+        "fieldLabel": "Tanggal Instalasi",
+        "fieldType": "DATE",
+        "fieldWeight": 3,
+        "isRequired": true
+      },
+      {
+        "fieldLabel": "Kelengkapan Perangkat",
+        "fieldType": "CHECKBOX",
+        "fieldOptions": ["Router", "Kabel LAN", "Splitter", "ODP"],
+        "fieldWeight": 1,
+        "isRequired": true
+      },
+      {
+        "fieldLabel": "Jenis Paket",
+        "fieldType": "DROPDOWN",
+        "fieldOptions": ["10 Mbps", "20 Mbps", "50 Mbps", "100 Mbps"],
+        "fieldWeight": 2,
+        "isRequired": true
+      },
+      {
+        "fieldLabel": "Foto Lokasi",
+        "fieldType": "CAMERA",
+        "fieldWeight": 1,
+        "isRequired": true,
+        "description": "Ambil foto lokasi instalasi"
+      },
+      {
+        "fieldLabel": "Foto Perangkat (Multiple)",
+        "fieldType": "MULTIPLE_CAMERA",
+        "fieldWeight": 2,
+        "isRequired": false,
+        "description": "Foto semua perangkat yang terpasang"
+      },
+      {
+        "fieldLabel": "Upload Bukti Serah Terima",
+        "fieldType": "UPLOAD_IMAGE",
+        "fieldWeight": 3,
+        "isRequired": true
+      },
+      {
+        "fieldLabel": "Upload Dokumen Pendukung",
+        "fieldType": "MULTIPLE_UPLOAD_IMAGE",
+        "fieldWeight": 4,
+        "isRequired": false
+      },
+      {
+        "fieldLabel": "Foto atau Upload Tanda Tangan",
+        "fieldType": "CAMERA_OR_UPLOAD_IMAGE",
+        "fieldWeight": 5,
+        "isRequired": true,
+        "description": "Bisa ambil foto langsung atau upload dari galeri"
+      }
+    ]
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
