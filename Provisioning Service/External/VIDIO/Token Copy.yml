@@ -1,0 +1,78 @@
+info:
+  name: Token Copy
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://api.staging.vidio.com/oauth2/token
+  body:
+    type: form-urlencoded
+    data:
+      - name: client_id
+        value: ca8a46a6-9924-4c8b-92d9-cade630d2ecc
+      - name: client_secret
+        value: VgiTuc5OC7H-N95r3~r0ZFpzu-
+      - name: grant_type
+        value: client_credentials
+      - name: scope
+        value: SUBSCRIPTION_PAYMENT_PARTNER
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Token
+    request:
+      url: https://api.staging.vidio.com/oauth2/token
+      method: POST
+      body:
+        type: form-urlencoded
+        data:
+          - name: client_id
+            value: ca8a46a6-9924-4c8b-92d9-cade630d2ecc
+          - name: client_secret
+            value: VgiTuc5OC7H-N95r3~r0ZFpzu-
+          - name: grant_type
+            value: client_credentials
+          - name: scope
+            value: SUBSCRIPTION_PAYMENT_PARTNER
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: server
+          value: nginx
+        - name: content-type
+          value: application/json;charset=UTF-8
+        - name: Content-Length
+          value: "192"
+        - name: cache-control
+          value: no-store
+        - name: pragma
+          value: no-cache
+        - name: server-node
+          value: vidio-web-int-ig-gx9x
+        - name: date
+          value: Tue, 24 Mar 2026 05:33:08 GMT
+        - name: vary
+          value: Accept-Encoding, Accept-Language, X-Requested-With, Origin, X-API-Platform, X-Secure-Level, X-API-Auth, X-Country-Id,X-Country-Alpha2, X-User-Login,X-View-Profile, X-Variation-Type
+        - name: x-user-agent
+          value: PostmanRuntime/7.51.1
+        - name: via
+          value: 1.1 google
+        - name: Alt-Svc
+          value: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      body:
+        type: json
+        data: |-
+          {
+              "access_token": "ory_at__odQHKqiZvo4O0NYPDaNfGCM0FImRb8tElpg3Obtnd0.kmqKS7DObuZukHt_Fjcv_WQnzzCBOXSNR3G1Jw-W9C4",
+              "expires_in": 3599,
+              "scope": "SUBSCRIPTION_PAYMENT_PARTNER",
+              "token_type": "bearer"
+          }

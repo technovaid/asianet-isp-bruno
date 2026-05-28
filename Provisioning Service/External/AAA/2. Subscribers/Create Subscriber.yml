@@ -1,0 +1,75 @@
+info:
+  name: Create Subscriber
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/aaa_db/subscribers"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "serial_number": "HWTC1234ABCD",
+        "mac_address": "Aaaa.bbbb.cccc",
+        "account_id": "ACC-001234",
+        "username": "user001@isp.net",
+        "password": "P@ssw0rd!",
+        "region_code": "JKT-01",
+        "service_type": "IPOE",
+        "packet_service": "PKT-100M",
+        "requested_by": "crm-agent-01"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 201 Created
+    request:
+      url: ""
+      method: POST
+    response:
+      status: 201
+      statusText: Created
+      body:
+        type: text
+        data: |-
+          {
+            "status": "success",
+            "account_id": "ACC-001234",
+            "create_date": "2024-01-01T08:00:00Z",
+            "message": "Subscriber created. Account is now active in AAA."
+          }
+  - name: 409 Duplicate
+    request:
+      url: ""
+      method: POST
+    response:
+      status: 409
+      statusText: Conflict
+      body:
+        type: text
+        data: '{ "status": "error", "code": "ACCOUNT_ALREADY_EXISTS", "message": "account_id or username is already registered." }'
+  - name: 422 Validation Error
+    request:
+      url: ""
+      method: POST
+    response:
+      status: 422
+      statusText: Unprocessable Entity
+      body:
+        type: text
+        data: '{ "status": "error", "code": "VALIDATION_ERROR", "message": "service_type must be PPPOE or IPOE." }'
+
+docs: |-
+  Creates a new subscriber record and pushes the account to Radiator AAA for PPPOE/IPOE activation.
+
+  **service_type** must be `PPPOE` or `IPOE`.

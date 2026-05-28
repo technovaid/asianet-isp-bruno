@@ -1,0 +1,408 @@
+info:
+  name: LISTING
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{url_local}}/single_ticket?page=1"
+  params:
+    - name: page
+      value: "1"
+      type: query
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaXRhbiBBZG1pbiAyIiwiZXhwIjoxNzcwNzExNzQ5fQ.mC02kCTHlKSeHWLWSRM5dhaJji-8bEgb-YXV9U8_QTU
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: LISTING
+    request:
+      url: "{{url_local}}/single_ticket?page=1"
+      method: GET
+      params:
+        - name: page
+          value: "1"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: Referrer-Policy
+          value: strict-origin-when-cross-origin
+        - name: Permissions-Policy
+          value: geolocation=(self), camera=(), microphone=()
+        - name: Cross-Origin-Embedder-Policy
+          value: unsafe-none
+        - name: Cross-Origin-Resource-Policy
+          value: cross-origin
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin-allow-popups
+        - name: Content-Security-Policy
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://maps.googleapis.com https://*.googleapis.com; frame-src 'self' https://www.google.com https://ticketms.asianet.co.id; frame-ancestors 'self'"
+        - name: vary
+          value: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+        - name: content-type
+          value: application/json
+        - name: Date
+          value: Tue, 10 Feb 2026 07:13:11 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "data": [
+                  {
+                      "id": 669706,
+                      "created_by": "Titan",
+                      "customer_id": "504901",
+                      "ticket_id": "TTN_20260210_0003",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_504901/TTN_T0100239_TTN_20260210_0003",
+                      "department": "IKR",
+                      "category": "Access Issue",
+                      "subcategory": null,
+                      "code": null,
+                      "status": "assigned",
+                      "vendor": "CKT",
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": null,
+                      "rca": null,
+                      "billing_ioh": "TTN_T0100239",
+                      "hp_id": null,
+                      "created_at": "2026-02-10T13:53:00",
+                      "argo_start": "2026-02-10T13:53:00",
+                      "assign_at": "2026-02-10T14:02:50",
+                      "updated_at": null,
+                      "done_at": null,
+                      "closed_at": null,
+                      "amt_ticket_id": "AMT-202602100547",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": null,
+                      "visitation": null,
+                      "to_team": null
+                  },
+                  {
+                      "id": 669435,
+                      "created_by": "Titan",
+                      "customer_id": "4185628",
+                      "ticket_id": "TTN_20260210_0002",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_4185628/TTN_T0101190_TTN_20260210_0002",
+                      "department": "IKR",
+                      "category": "Access",
+                      "subcategory": "ONT",
+                      "code": "WiFi Configuration",
+                      "status": "done progress",
+                      "vendor": "CKT",
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "Restart ONT",
+                      "rca": "Intermittent WiFi Signal",
+                      "billing_ioh": "TTN_T0101190",
+                      "hp_id": null,
+                      "created_at": "2026-02-10T10:56:49",
+                      "argo_start": "2026-02-10T10:56:49",
+                      "assign_at": "2026-02-10T11:54:40",
+                      "updated_at": "2026-02-10T14:03:55",
+                      "done_at": "2026-02-10T14:03:55",
+                      "closed_at": null,
+                      "amt_ticket_id": "AMT-202602100283",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "smg_ckt_mt_6",
+                      "visitation": "non visit",
+                      "to_team": "smg_ckt_mt_6"
+                  },
+                  {
+                      "id": 635847,
+                      "created_by": "Titan",
+                      "customer_id": "4203998",
+                      "ticket_id": "TTN_20260119_0001",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_4203998/TTN_T0101502_TTN_20260119_0001",
+                      "department": "CX IOH",
+                      "category": "non-Technical",
+                      "subcategory": "Subscriber",
+                      "code": "Customer Perception w/o Visit",
+                      "status": "cancel",
+                      "vendor": "CKT",
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "Customer Reject Visit",
+                      "rca": null,
+                      "billing_ioh": "TTN_T0101502",
+                      "hp_id": null,
+                      "created_at": "2026-01-19T09:25:32",
+                      "argo_start": "2026-01-19T09:25:32",
+                      "assign_at": "2026-01-19T10:17:57",
+                      "updated_at": "2026-01-19T11:12:38",
+                      "done_at": null,
+                      "closed_at": "2026-01-19T14:06:22",
+                      "amt_ticket_id": "AMT-202601190324",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "Annisa Ananditha Pricilla",
+                      "visitation": null,
+                      "to_team": "smg_ckt_mt_3"
+                  },
+                  {
+                      "id": 624883,
+                      "created_by": "Titan",
+                      "customer_id": "4248468",
+                      "ticket_id": "TTN_20260113_0004",
+                      "subject": "Titan_AMT_COMP_FTTH Slow or Unstable Internet_4248468/TTN_T0102351_TTN_20260113_0004",
+                      "department": "CX IOH",
+                      "category": "non-Technical",
+                      "subcategory": "Subscriber",
+                      "code": "Customer Perception w/o Visit",
+                      "status": "cancel",
+                      "vendor": null,
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "Double Ticket",
+                      "rca": null,
+                      "billing_ioh": "TTN_T0102351",
+                      "hp_id": null,
+                      "created_at": "2026-01-13T09:37:04",
+                      "argo_start": "2026-01-13T09:37:04",
+                      "assign_at": null,
+                      "updated_at": null,
+                      "done_at": null,
+                      "closed_at": "2026-01-13T09:42:05",
+                      "amt_ticket_id": "AMT-202601130291",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "Diza Dafriyanto",
+                      "visitation": null,
+                      "to_team": null
+                  },
+                  {
+                      "id": 595692,
+                      "created_by": "Titan",
+                      "customer_id": "4228949",
+                      "ticket_id": "TTN_20251225_0001",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_4228949/TTN_T0101947_TTN_20251225_0001",
+                      "department": "CX IOH",
+                      "category": "non-Technical",
+                      "subcategory": "Subscriber",
+                      "code": "Customer Perception w/ Visit",
+                      "status": "cancel",
+                      "vendor": "CKT",
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "pelanggan menolak kunjungan",
+                      "rca": "No Fault Found (Service Normal) at Customer Side, Visit Cancelled by Customer, 1st Ticket in the last 30 days",
+                      "billing_ioh": "TTN_T0101947",
+                      "hp_id": null,
+                      "created_at": "2025-12-25T08:43:44",
+                      "argo_start": "2025-12-25T08:43:44",
+                      "assign_at": "2025-12-25T10:08:53",
+                      "updated_at": "2025-12-25T20:26:25",
+                      "done_at": "2025-12-25T20:26:25",
+                      "closed_at": "2025-12-25T20:39:02",
+                      "amt_ticket_id": "AMT-202512250150",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "Paramita.Kusumadewa",
+                      "visitation": "non visit",
+                      "to_team": "smg_ckt_mt_16"
+                  },
+                  {
+                      "id": 592331,
+                      "created_by": "Titan",
+                      "customer_id": "4203991",
+                      "ticket_id": "TTN_20251222_0005",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_4203991/TTN_T0101501_TTN_20251222_0005",
+                      "department": "CX IOH",
+                      "category": "non-Technical",
+                      "subcategory": "Subscriber",
+                      "code": "Customer Perception w/o Visit",
+                      "status": "cancel",
+                      "vendor": "FibeArt",
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "NHI Green Service Nomal",
+                      "rca": "Customer not at home or cannot be contacted",
+                      "billing_ioh": "TTN_T0101501",
+                      "hp_id": null,
+                      "created_at": "2025-12-22T19:07:12",
+                      "argo_start": "2025-12-23T08:00:00",
+                      "assign_at": "2025-12-22T19:34:22",
+                      "updated_at": "2025-12-23T17:58:39",
+                      "done_at": "2025-12-23T17:58:39",
+                      "closed_at": "2025-12-23T18:31:29",
+                      "amt_ticket_id": "AMT-202512221304",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "pepbi.kristianto",
+                      "visitation": "visit",
+                      "to_team": "Smg_fbr_mt_9"
+                  },
+                  {
+                      "id": 589449,
+                      "created_by": "Titan",
+                      "customer_id": "4230711",
+                      "ticket_id": "TTN_20251220_0003",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_4230711/TTN_T0101976_TTN_20251220_0003",
+                      "department": "CX IOH",
+                      "category": "non-Technical",
+                      "subcategory": "Subscriber",
+                      "code": "Customer Perception w/ Visit",
+                      "status": "cancel",
+                      "vendor": "CKT",
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "impact preventive maintenance",
+                      "rca": "Already Precon, FAT OK, Customer Refuse to be visited, info service normal",
+                      "billing_ioh": "TTN_T0101976",
+                      "hp_id": null,
+                      "created_at": "2025-12-20T18:26:35",
+                      "argo_start": "2025-12-21T08:00:00",
+                      "assign_at": "2025-12-20T20:17:11",
+                      "updated_at": "2025-12-21T18:06:06",
+                      "done_at": "2025-12-21T18:06:06",
+                      "closed_at": "2025-12-21T18:19:31",
+                      "amt_ticket_id": "AMT-202512201146",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "pepbi.kristianto",
+                      "visitation": "non visit",
+                      "to_team": "smg_ckt_mt_14"
+                  },
+                  {
+                      "id": 583899,
+                      "created_by": "Titan",
+                      "customer_id": "4205859",
+                      "ticket_id": "TTN_20251217_0002",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_4205859/TTN_T0101521_TTN_20251217_0002",
+                      "department": "CX IOH",
+                      "category": "non-Technical",
+                      "subcategory": "Subscriber",
+                      "code": "Customer Perception w/o Visit",
+                      "status": "cancel",
+                      "vendor": null,
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "double ticket",
+                      "rca": null,
+                      "billing_ioh": "TTN_T0101521",
+                      "hp_id": null,
+                      "created_at": "2025-12-17T12:34:55",
+                      "argo_start": "2025-12-17T12:34:55",
+                      "assign_at": null,
+                      "updated_at": null,
+                      "done_at": null,
+                      "closed_at": "2025-12-17T12:35:37",
+                      "amt_ticket_id": "AMT-202512170644",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "Fasha Agatha",
+                      "visitation": null,
+                      "to_team": null
+                  },
+                  {
+                      "id": 578380,
+                      "created_by": "Titan",
+                      "customer_id": "4222190",
+                      "ticket_id": "TTN_20251214_0001",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_4222190/TTN_T0101833_TTN_20251214_0001",
+                      "department": "CX IOH",
+                      "category": "Access",
+                      "subcategory": "Single Case",
+                      "code": "Initial Check",
+                      "status": "cancel",
+                      "vendor": null,
+                      "city": "Kota Semarang",
+                      "partner": "Titan",
+                      "closed_code": "double ticket",
+                      "rca": null,
+                      "billing_ioh": "TTN_T0101833",
+                      "hp_id": null,
+                      "created_at": "2025-12-14T08:06:10",
+                      "argo_start": "2025-12-14T08:06:10",
+                      "assign_at": null,
+                      "updated_at": null,
+                      "done_at": null,
+                      "closed_at": "2025-12-14T10:09:45",
+                      "amt_ticket_id": "AMT-202512140117",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "Saeun",
+                      "visitation": null,
+                      "to_team": null
+                  },
+                  {
+                      "id": 574252,
+                      "created_by": "Titan",
+                      "customer_id": "511369",
+                      "ticket_id": "TTN_20251211_0005",
+                      "subject": "Titan_AMT_COMP_FTTH Internet Not Working_511369/TTN_T0100354_TTN_20251211_0005",
+                      "department": "CX IOH",
+                      "category": "non-Technical",
+                      "subcategory": "IOH",
+                      "code": "IOH",
+                      "status": "cancel",
+                      "vendor": null,
+                      "city": null,
+                      "partner": "Titan",
+                      "closed_code": "double ticket",
+                      "rca": null,
+                      "billing_ioh": "TTN_T0100354",
+                      "hp_id": null,
+                      "created_at": "2025-12-11T10:44:54",
+                      "argo_start": "2025-12-11T10:44:54",
+                      "assign_at": null,
+                      "updated_at": null,
+                      "done_at": null,
+                      "closed_at": "2025-12-11T11:32:00",
+                      "amt_ticket_id": "AMT-202512110349",
+                      "smartcare_id": null,
+                      "severity": "Minor",
+                      "qos": null,
+                      "api_status": null,
+                      "update_by": "M. Izzudin Hisyam",
+                      "visitation": null,
+                      "to_team": null
+                  }
+              ],
+              "meta": {
+                  "page": 1,
+                  "per_page": 10,
+                  "total": 28,
+                  "total_pages": 3
+              }
+          }

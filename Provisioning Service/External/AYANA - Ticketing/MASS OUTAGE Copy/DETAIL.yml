@@ -1,0 +1,97 @@
+info:
+  name: DETAIL
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{url_local}}/mass_outage/detail?incident_id=INC_01_20260210-0024"
+  params:
+    - name: incident_id
+      value: INC_01_20260210-0024
+      type: query
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaXRhbiBBZG1pbiAyIiwiZXhwIjoxNzcwNzA5MTMzfQ.gjUkcw-qaNq8fyTba7I8rXXgfiIWk-4itNnHv0LGEHM
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: DETAIL
+    request:
+      url: "{{url_local}}/mass_outage/detail?incident_id=INC_01_20260210-0024"
+      method: GET
+      params:
+        - name: incident_id
+          value: INC_01_20260210-0024
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: Referrer-Policy
+          value: strict-origin-when-cross-origin
+        - name: Permissions-Policy
+          value: geolocation=(self), camera=(), microphone=()
+        - name: Cross-Origin-Embedder-Policy
+          value: unsafe-none
+        - name: Cross-Origin-Resource-Policy
+          value: cross-origin
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin-allow-popups
+        - name: Content-Security-Policy
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://maps.googleapis.com https://*.googleapis.com; frame-src 'self' https://www.google.com https://ticketms.asianet.co.id; frame-ancestors 'self'"
+        - name: vary
+          value: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+        - name: content-type
+          value: application/json
+        - name: Date
+          value: Tue, 10 Feb 2026 07:25:34 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "data": [
+                  {
+                      "customer_id": "4206352",
+                      "fh_id": "TTN_T0101540",
+                      "customer_detail": [
+                          {
+                              "nama_pelanggan": "Amiruddin",
+                              "nomor_wa": "6281128005050",
+                              "selular1": "6281128005050",
+                              "Jalan": "Mlatibaru Rw 1-mlatibaru Rw 1-2chq+rcw, Bugangan, Kec. Semarang Tim., Kota Semarang, Jawa Tengah, Indonesia No 3",
+                              "kota": "Kota Semarang",
+                              "kecamatan": "Semarang Timur",
+                              "kelurahan": "Semarang Timur"
+                          }
+                      ]
+                  }
+              ],
+              "mass_problem": {
+                  "incidentId": "INC_01_20260210-0024",
+                  "rows": {
+                      "inc_description": "SMG-TWNOD-OLT1-FX16 1/8/9",
+                      "inc_title": "OLT Tawang1 PON PORT DOWN",
+                      "created_at": "2026-02-10T05:56:25.000Z",
+                      "inc_status": 4,
+                      "closed_at": "2026-02-10T09:40:54.000Z"
+                  }
+              }
+          }

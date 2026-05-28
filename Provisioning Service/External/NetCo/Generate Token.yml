@@ -1,0 +1,85 @@
+info:
+  name: Generate Token
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://10.10.4.2/amt/1.1/atm/generateToken
+  headers:
+    - name: content-type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "email": "gradeplus@asianet.co.id",
+          "password": "Amt@2026"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.getStatus() === 200) {
+            const jsonData = res.getBody();
+            const accessToken = jsonData.body.accessToken;
+            bru.collectionVariables.set("netcoAccessToken", accessToken);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Generate Token
+    request:
+      url: http://10.10.4.2/amt/1.1/atm/generateToken
+      method: POST
+      headers:
+        - name: content-type
+          value: application/json
+      body:
+        type: json
+        data: '{"email":"wilman.alfarezi@asianet.co.id","password":"Asi@netjkt25"}'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.14.1
+        - name: Date
+          value: Wed, 25 Mar 2026 13:07:44 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, POST, OPTIONS
+        - name: Access-Control-Allow-Headers
+          value: Origin, Content-Type, Accept, Authorization, parent-id
+        - name: Access-Control-Allow-Credentials
+          value: "true"
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": "ATM-200",
+              "returnMessage": "Success",
+              "body": {
+                  "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnZpcm9ubWVudCI6ImRldiIsImV4cCI6MTc3NDQ0NDk3MiwiZGF0YSI6eyJ1c2VySWQiOiIxZmYwNjg0NTk2OWZlNTAxYWMzOTJhODUyZjQ2NWIxZiIsImVtYWlsIjoid2lsbWFuLmFsZmFyZXppQGFzaWFuZXQuY28uaWQiLCJhcHBsaWNhdGlvbiI6IkFMTCIsInJvbGUiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwicGVybWlzc2lvbiI6e30sInBlcm1pc3Npb25FeHRlbmRlZCI6eyJBVE0iOnsiaW1wZXJzb25hdGUiOlsiYzkxMDRkOWRhOGNlNzNlODFmZmM3ODcyNzA2ZjgzYzIiLCIyYzc0NmQ2NzUzZDFkNTc0MDAwMGM4ZTY4MWY5NGViOSIsIjA3NTNmZWQ3OTkxOGI4MDJjYjg5MTg0YWYzMTg2MDI3IiwiMGFiYzM4OTc2NDg0MjI2Njg4NDA0NjA4MDZlMDNlZTciLCIxNTA4ZGEyZDc3NjBjMDJiY2I1ZWYzZWU3Mjc2NWQyMiIsIjJjNzQ2ZDY3NTNkMWQ1NzQwMDAwYzhlNjgxZjk0ZWI5IiwiNHU0ZG9nd24yYW11ZmkxM2t2NXl3MzlzNnY0dzc3IiwiNTE0N2VjMjU4ZDRiMzRlNzM5OTMzMDliMmJiZjc0N2EiLCI2MjdkMGYyNDE3NjU3YWE4OTViMmY1NTI3NTljZmI2NyIsIjhlYjJkOGMwM2M4YjYzODQxZmY2NDBkOWE1ODA3NGYxIiwiOTAxNjQ1YjM5Yjk2YjdiNmVhZGU0ODY0ZTQ2OTJlMGYiLCI5MGMzMWRmZjk5N2E5MDRiM2I2MTczYzMwNjc0MDE5NCIsImFicTYxbzkyZjU2cmU5bmowYWc3MGg0ejUydWswaiIsImFmNDQzY2MzZDJlMmRlNjdkNDdjYjI2YjI3OGQ1ZmZjIiwiYzkxZTVhNGExNDU3Mjg2ZWM2ZjE0MTViZTg0ZmZiMDkiLCJjOWMwZjQ2OTMwYTZlOWVkMDlmNTk1YzQwODBjYTY0ZCIsImRiM2QxYmJjOGJjZTVhNjBhYjRlMjQzMjQ5ZjcyZTlmIiwiZTFlNTNjNWZlMGQxNzg5ZGQzZDc5MjRmNTdhZTAyZDMiLCJlNWNhZTRhNDM4ZGM5NzkxNGJlMDk2YTVhYzU4MWE2OCIsIjQ5NDBkMzIzN2U4OTY4Y2U0ZjY2OWJiMTgyMjgyY2IwIiwiZjBhMmY4OWVkMTQ0ZTE2YThiNDk0ODhiODA5MGRlODkiLCJmd21ibjF5NjY2MXBtcXA0aDlzOXN1Yjd2ZzhwazUiLCJwbmVscTB1Mzc3ODhlYWVvMzBrdWZidXkwaGN4ZDd2eCIsInRtYXNwNDQ5MGNlY3NydmN3b2d4YzJwdDIxY2FneiIsIjFlYjViZmJjMzZjNWRmZjMyYjllODRhNTNjMDg3ZmRmIiwiOTk1NGQ2N2NhZmJiMzVlM2VjZGVkOWM4ZTE2MDRkZWUiLCJlMjY1ZjZjMDk1MTM2Mjc0YzU2NmMyMWQzNzZlNTdmYyJdLCJyb2xlIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwidXNlciI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl19LCJPRE0iOnsiYWN0aW9uIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwiYWxsQ2xpZW50Ijp0cnVlLCJhbGxPcmRlckluZm8iOnRydWUsImFsbFJlZ2lvbiI6dHJ1ZSwiY2xpZW50TWFwcGluZyI6W10sInJlZ2lvbiI6W119fX19.PfOsujnp2ba4p_xCiV0w8ZeaNsEyE4xQMOMNTV6J0Jxa1yVJqxnhpjIkGZghos6pTJA1FVHO_TO21RHFkMU2HZv28WxTEjEz7qKZrb8MR5SijYELMgLLX15MpRfJXPwtTZAPvNoiQyOVQ9jJ4Am4Fmd1wzVyYIp76SVmhzAQzjFi1jMgaUvpKgUCtZFrNOo3XBqhqvgDMpzLty6kfIiYtAmFodhhMDtf_3DxqhqAOGA7VAS9jIdT2Qv5GLZQXCtzey-O8F3P4T66-yqbv1GLokmCMaL0GxrztcTvT2o0E2kLxZWHY5lfErIhUfrn6CAyYI3abNqEQjZRU9Q6WWixBQ",
+                  "application": "ALL",
+                  "email": "wilman.alfarezi@asianet.co.id",
+                  "refreshToken": "pOy6TC1QLKVYpwCrfX7RFC0O4bKUVZDCAkMQpp6EFns7bL8LOJ7VRfG7JMDMxr9c",
+                  "userId": "1ff06845969fe501ac392a852f465b1f"
+              }
+          }
+
+docs: "Generated from cURL: curl --location 'http://apidev.asianet.co.id/amt/1.1/atm/generateToken' --header 'content-type: application/json' --data-raw '{\"email\":\"wilman.alfarezi@asianet.co.id\",\"password\":\"Asi@netjkt25\"}'"

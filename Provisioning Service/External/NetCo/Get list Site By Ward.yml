@@ -1,0 +1,315 @@
+info:
+  name: Get list Site By Ward
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: http://10.10.4.2/amt/1.1/hpm/geographicSiteManagement/v1/geographicSite?city=kota%20bandung
+  params:
+    - name: city
+      value: kota%20bandung
+      type: query
+    - name: ward
+      value: cipondoh%20makmur
+      type: query
+      disabled: true
+    - name: district
+      value: cipondoh%20makmur
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Get list Site By Ward
+    request:
+      url: http://10.10.4.2/amt/1.1/hpm/geographicSiteManagement/v1/geographicSite?ward=KUNINGAN
+      method: GET
+      params:
+        - name: ward
+          value: KUNINGAN
+          type: query
+        - name: district
+          value: cipondoh%20makmur
+          type: query
+          disabled: true
+        - name: city
+          value: kota%20bandung
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.14.1
+        - name: Date
+          value: Tue, 31 Mar 2026 03:36:58 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1758"
+        - name: Connection
+          value: keep-alive
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": "HPM-200",
+              "returnMessage": "Success",
+              "body": [
+                  {
+                      "id": "AMT14SMG0178",
+                      "href": null,
+                      "name": "KUNINGAN RW 5",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "1191201",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.410864 -6.962507)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  },
+                  {
+                      "id": "AMT14SMG0264",
+                      "href": null,
+                      "name": "KUNINGAN RW 4",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "931018",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.411554 -6.9592)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  },
+                  {
+                      "id": "AMT14SMG0280",
+                      "href": null,
+                      "name": "KUNINGAN RW 6",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "959742",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.411562 -6.96545)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  },
+                  {
+                      "id": "AMT14SMG0282",
+                      "href": null,
+                      "name": "KUNINGAN RW 7",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "1111429",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.41532 -6.962269)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  }
+              ]
+          }
+  - name: Get list Site By Ward
+    request:
+      url: http://10.10.4.2/amt/1.1/hpm/geographicSiteManagement/v1/geographicSite?city=KOTA%20SEMARANG
+      method: GET
+      params:
+        - name: ward
+          value: KUNINGAN
+          type: query
+          disabled: true
+        - name: district
+          value: cipondoh%20makmur
+          type: query
+          disabled: true
+        - name: city
+          value: KOTA%20SEMARANG
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.14.1
+        - name: Date
+          value: Tue, 31 Mar 2026 03:37:24 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1758"
+        - name: Connection
+          value: keep-alive
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": "HPM-200",
+              "returnMessage": "Success",
+              "body": [
+                  {
+                      "id": "AMT14SMG0178",
+                      "href": null,
+                      "name": "KUNINGAN RW 5",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "1191201",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.410864 -6.962507)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  },
+                  {
+                      "id": "AMT14SMG0264",
+                      "href": null,
+                      "name": "KUNINGAN RW 4",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "931018",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.411554 -6.9592)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  },
+                  {
+                      "id": "AMT14SMG0280",
+                      "href": null,
+                      "name": "KUNINGAN RW 6",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "959742",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.411562 -6.96545)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  },
+                  {
+                      "id": "AMT14SMG0282",
+                      "href": null,
+                      "name": "KUNINGAN RW 7",
+                      "description": null,
+                      "status": "rfs",
+                      "@baseType": "homepass",
+                      "address": {
+                          "id": "924293",
+                          "streetName": null,
+                          "postcode": "50176",
+                          "city": "KOTA SEMARANG",
+                          "stateOrProvince": "JAWA TENGAH",
+                          "country": "Indonesia",
+                          "district": "",
+                          "ward": ""
+                      },
+                      "geographicLocation": {
+                          "id": "1111429",
+                          "name": "KUNINGAN",
+                          "geometry": "POINT(110.41532 -6.962269)",
+                          "latitude": null,
+                          "longitude": null
+                      },
+                      "lastUpdate": null
+                  }
+              ]
+          }

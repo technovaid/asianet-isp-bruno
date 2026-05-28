@@ -1,0 +1,24 @@
+info:
+  name: EXPORT (PDF)
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{url}}/single_ticket/export"
+  body:
+    type: json
+    data: |-
+      {
+          "start_date": "2026-02-04",
+          "end_date": "2026-02-06"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaXRhbiBBZG1pbiAyIiwiZXhwIjoxNzcwNzA5MTMzfQ.gjUkcw-qaNq8fyTba7I8rXXgfiIWk-4itNnHv0LGEHM
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

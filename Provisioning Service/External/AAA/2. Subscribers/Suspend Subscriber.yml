@@ -1,0 +1,39 @@
+info:
+  name: Suspend Subscriber
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base_url}}/aaa_db/subscribers/{{account_id}}/suspend"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "reason": "Overdue invoice",
+        "requested_by": "billing-system"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 OK
+    request:
+      url: ""
+      method: PUT
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: '{ "status": "success", "account_status": "suspended", "message": "Subscriber suspended. Disconnect-Request sent to AAA." }'
+
+docs: Temporarily suspends a subscriber by setting `account_status` to `suspended` and sending a Disconnect-Request to Radiator AAA to drop the active session.

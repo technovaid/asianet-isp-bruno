@@ -1,0 +1,93 @@
+info:
+  name: GET TOKEN
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url_local}}/auth/login"
+  body:
+    type: json
+    data: |-
+      //gunakan akun dengan role admin - operator
+      {
+          "username": "titan.admin2",
+          "password": "amt@2025"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: GET TOKEN
+    request:
+      url: "{{url_local}}/auth/login"
+      method: POST
+      body:
+        type: json
+        data: |-
+          //gunakan akun dengan role admin - operator
+          {
+              "username": "titan.admin2",
+              "password": "amt@2025"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: Referrer-Policy
+          value: strict-origin-when-cross-origin
+        - name: Permissions-Policy
+          value: geolocation=(self), camera=(), microphone=()
+        - name: Cross-Origin-Embedder-Policy
+          value: unsafe-none
+        - name: Cross-Origin-Resource-Policy
+          value: cross-origin
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin-allow-popups
+        - name: Content-Security-Policy
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://maps.googleapis.com https://*.googleapis.com; frame-src 'self' https://www.google.com https://ticketms.asianet.co.id; frame-ancestors 'self'"
+        - name: vary
+          value: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+        - name: content-type
+          value: application/json
+        - name: Date
+          value: Tue, 10 Feb 2026 07:23:54 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "success": true,
+              "user": {
+                  "id": "2c746d6753d1d5740000c8e681f94eb9",
+                  "username": "titan.admin2",
+                  "tenant": "Titan",
+                  "name": "Titan Admin 2",
+                  "role": "admin",
+                  "email": "wiwid@nexa.net.id",
+                  "pass_id": "N3x4n371d",
+                  "auth_id": "2c746d6753d1d5740000c8e681f94eb9",
+                  "radius_meter": 200,
+                  "prefix": "TTN",
+                  "subrole": "operation"
+              },
+              "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaXRhbiBBZG1pbiAyIiwiZXhwIjoxNzcwNzA5MTMzfQ.gjUkcw-qaNq8fyTba7I8rXXgfiIWk-4itNnHv0LGEHM",
+              "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaXRhbiBBZG1pbiAyIiwiZXhwIjoxNzcxMzEzMDMzfQ.P5L2SpdEqadIh6axQfAFby6vqcy2_SGrC5nkgfpGYoI",
+              "token_type": "bearer"
+          }

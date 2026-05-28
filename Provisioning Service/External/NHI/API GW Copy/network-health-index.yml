@@ -1,0 +1,115 @@
+info:
+  name: network-health-index
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://apigw.asianet.co.id:9443/api/external/singleview/network-health-index
+  headers:
+    - name: sec-ch-ua-platform
+      value: '"Windows"'
+    - name: authorization
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0MTUzLCJleHAiOjE3NjI4ODg5NTN9.FRGMoCWymaxycILJxm4-tKD0TdqTZGJizgSyK3LMj2Y
+    - name: Referer
+      value: http://localhost:3000/spv-app/test-api-nhi
+    - name: User-Agent
+      value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+    - name: sec-ch-ua
+      value: '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"'
+    - name: Content-Type
+      value: text/plain;charset=UTF-8
+    - name: sec-ch-ua-mobile
+      value: ?0
+  body:
+    type: json
+    data: |-
+      {
+          "billing_id": "FH_11768334",
+          "time_user_complain": "",
+          "whatsapp_no_of_user": "",
+          "problem_description": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: network-health-index
+    request:
+      url: https://apigw.asianet.co.id:9443/api/external/singleview/network-health-index
+      method: POST
+      headers:
+        - name: sec-ch-ua-platform
+          value: '"Windows"'
+        - name: authorization
+          value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0MTUzLCJleHAiOjE3NjI4ODg5NTN9.FRGMoCWymaxycILJxm4-tKD0TdqTZGJizgSyK3LMj2Y
+        - name: Referer
+          value: http://localhost:3000/spv-app/test-api-nhi
+        - name: User-Agent
+          value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+        - name: sec-ch-ua
+          value: '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"'
+        - name: Content-Type
+          value: text/plain;charset=UTF-8
+        - name: sec-ch-ua-mobile
+          value: ?0
+      body:
+        type: json
+        data: |-
+          {
+              "billing_id": "FH_11768334",
+              "time_user_complain": "",
+              "whatsapp_no_of_user": "",
+              "problem_description": ""
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: vary
+          value: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+        - name: Date
+          value: Sun, 29 Mar 2026 19:34:26 GMT
+        - name: Server
+          value: APISIX/3.9.1
+      body:
+        type: json
+        data: |-
+          {
+              "request_id": "75b8fe85-0922-4d55-90c8-3c3558aaf6cb",
+              "success": true,
+              "billing_id": "FH_11768334",
+              "serial_number": "ZTEGD365EBAF",
+              "is_MO": false,
+              "is_PMC": false,
+              "current_rx": "-26.99",
+              "current_rx_status": "GOOD",
+              "link_status": "CONNECTED",
+              "connected_device": 0,
+              "is_registered_in_acs_avs": false,
+              "ioh_need_create_tt": false,
+              "network_health_index": "GREEN",
+              "repeat_TT": 0
+          }
+
+docs: |-
+  Generated from cURL: curl 'http://localhost:3000/spv-app/api/external/network-health-index' \
+    -H 'sec-ch-ua-platform: "Windows"' \
+    -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0MTUzLCJleHAiOjE3NjI4ODg5NTN9.FRGMoCWymaxycILJxm4-tKD0TdqTZGJizgSyK3LMj2Y' \
+    -H 'Referer: http://localhost:3000/spv-app/test-api-nhi' \
+    -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36' \
+    -H 'sec-ch-ua: "Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"' \
+    -H 'Content-Type: text/plain;charset=UTF-8' \
+    -H 'sec-ch-ua-mobile: ?0' \
+    --data-raw '{"billing_id":"FH_1000405292"}'

@@ -1,0 +1,7 @@
+info:
+  name: CREATE TICKET HELPER
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

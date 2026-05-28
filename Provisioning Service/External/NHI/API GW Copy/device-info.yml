@@ -1,0 +1,224 @@
+info:
+  name: device-info
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: https://apigw.asianet.co.id:9443/api/external/singleview/device-info?serial_number=ZTEGDA575245
+  headers:
+    - name: User-Agent
+      value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0NjAwLCJleHAiOjE3NjI4ODk0MDB9.jj_Rii_BLCh5at6uguIrXc4cvItSfRo7HTW7xOwYe-8
+    - name: Referer
+      value: http://10.11.76.8/spv-app/singleview
+  params:
+    - name: serial_number
+      value: ZTEGDA575245
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: device-info
+    request:
+      url: http://10.11.76.8/spv-app/api/external/ioh/device-info?serial_number=ZTEGDA5CFB9E
+      method: GET
+      headers:
+        - name: User-Agent
+          value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+        - name: Authorization
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0NjAwLCJleHAiOjE3NjI4ODk0MDB9.jj_Rii_BLCh5at6uguIrXc4cvItSfRo7HTW7xOwYe-8
+        - name: Referer
+          value: http://10.11.76.8/spv-app/singleview
+      params:
+        - name: serial_number
+          value: ZTEGDA5CFB9E
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.18.0 (Ubuntu)
+        - name: Date
+          value: Tue, 04 Nov 2025 21:51:20 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: vary
+          value: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+      body:
+        type: json
+        data: |-
+          {
+              "ontInfo": {
+                  "taskId": "d:ZTEGDA5CFB9E:36",
+                  "deviceId": "ZTEGDA5CFB9E",
+                  "startTime": "2025-11-04T21:51:19.596Z",
+                  "finishTime": "2025-11-04T21:51:20.864Z",
+                  "lastUpdateTime": "2025-11-04T21:51:20.864Z",
+                  "status": "Success",
+                  "summary": null,
+                  "blocking": false,
+                  "properties": [
+                      {
+                          "name": "AccountId",
+                          "value": "1000680164"
+                      },
+                      {
+                          "name": "IPAddress",
+                          "value": "10.247.252.45"
+                      },
+                      {
+                          "name": "LANDownload",
+                          "value": "0"
+                      },
+                      {
+                          "name": "LANUpload",
+                          "value": "0"
+                      },
+                      {
+                          "name": "MACAddress",
+                          "value": "38:91:48:a4:b6:ca"
+                      },
+                      {
+                          "name": "OltName",
+                          "value": "JKT-CRCOD-OLT1-FX16"
+                      },
+                      {
+                          "name": "OltPort",
+                          "value": "1/1/7/2/19"
+                      },
+                      {
+                          "name": "RXPower",
+                          "value": "-17.96"
+                      },
+                      {
+                          "name": "Region",
+                          "value": "JAKARTA"
+                      },
+                      {
+                          "name": "SSID24",
+                          "value": "MIRACLE"
+                      },
+                      {
+                          "name": "SSID5",
+                          "value": "MIRACLE"
+                      },
+                      {
+                          "name": "ServiceType",
+                          "value": "INTERNET"
+                      },
+                      {
+                          "name": "TXPower",
+                          "value": "2.12"
+                      },
+                      {
+                          "name": "WLANDownload",
+                          "value": "2214646381"
+                      },
+                      {
+                          "name": "WLANUpload",
+                          "value": "3042309950"
+                      },
+                      {
+                          "name": "connectedHosts",
+                          "value": "[\"V2058 (wifi)\",\"realme-Note-60 (wifi)\",\"Galaxy-A01 (wifi)\",\" (wifi)\"]"
+                      },
+                      {
+                          "name": "deviceId",
+                          "value": "ZTEGDA5CFB9E"
+                      },
+                      {
+                          "name": "downloadSpeed",
+                          "value": "unavailable"
+                      },
+                      {
+                          "name": "internetWanType",
+                          "value": "IPoE"
+                      },
+                      {
+                          "name": "lastReboot",
+                          "value": "2025-10-31T08:44:19.158Z"
+                      },
+                      {
+                          "name": "model",
+                          "value": "F679L"
+                      },
+                      {
+                          "name": "serialNumber",
+                          "value": "ZTEGDA5CFB9E"
+                      },
+                      {
+                          "name": "uploadSpeed",
+                          "value": "unavailable"
+                      },
+                      {
+                          "name": "uptime",
+                          "value": "392879"
+                      }
+                  ]
+              },
+              "ontParams": {
+                  "taskId": "d:ZTEGDA5CFB9E:35",
+                  "deviceId": "ZTEGDA5CFB9E",
+                  "startTime": "2025-11-04T21:51:20.868Z",
+                  "finishTime": "2025-11-04T21:51:20.916Z",
+                  "lastUpdateTime": "2025-11-04T21:51:20.916Z",
+                  "status": "Success",
+                  "summary": null,
+                  "blocking": false,
+                  "properties": [
+                      {
+                          "name": "IPaddress",
+                          "value": "10.122.192.124"
+                      },
+                      {
+                          "name": "MAC",
+                          "value": "389148A4B6CA"
+                      },
+                      {
+                          "name": "Model",
+                          "value": "F679L"
+                      },
+                      {
+                          "name": "RXPower",
+                          "value": "-17.96"
+                      },
+                      {
+                          "name": "SerialNumber",
+                          "value": "ZTEGDA5CFB9E"
+                      },
+                      {
+                          "name": "ServiceType",
+                          "value": "INET"
+                      },
+                      {
+                          "name": "TXPower",
+                          "value": "2.12"
+                      },
+                      {
+                          "name": "Uptime",
+                          "value": "392879"
+                      }
+                  ]
+              },
+              "status": 200
+          }
+
+docs: |-
+  Generated from cURL: curl 'http://10.11.76.8/spv-app/api/external/acs-avs-device-info?serial_number=48575443000CC1B5' \
+    -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0NjAwLCJleHAiOjE3NjI4ODk0MDB9.jj_Rii_BLCh5at6uguIrXc4cvItSfRo7HTW7xOwYe-8' \
+    -H 'Referer: http://10.11.76.8/spv-app/singleview' \
+    --insecure

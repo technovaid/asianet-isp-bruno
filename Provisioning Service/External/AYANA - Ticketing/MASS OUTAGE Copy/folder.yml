@@ -1,0 +1,7 @@
+info:
+  name: MASS OUTAGE Copy
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit

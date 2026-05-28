@@ -1,0 +1,24 @@
+info:
+  name: UPDATE REMARK
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{url}}/single_ticket/remarks"
+  body:
+    type: json
+    data: |-
+      {
+          "caseNumber": "",
+          "description": ""
+      }
+  auth:
+    type: bearer
+    token: 16023c3967097019e2671666b2ec4e2b2f555b7f31a413eb51baee812da9cf96
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,254 @@
+info:
+  name: Check Homepass by LongLat FAT
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: http://10.10.4.2/amt/1.1/hpm/geographicSiteManagement/v1/fatFeasibility?long=110.412308&lat=-6.958301
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+      disabled: true
+  params:
+    - name: long
+      value: "110.412308"
+      type: query
+    - name: lat
+      value: "-6.958301"
+      type: query
+    - name: siteId
+      value: AMT14SMG0280
+      type: query
+      disabled: true
+    - name: limit
+      value: "1"
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |+
+      {
+          "latitude": 3.522567,
+          "longitude": 98.672761
+      }
+
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: FAIL
+    request:
+      url: http://10.10.4.2/amt/1.1/hpm/homepass/feasibility
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Authorization
+          value: Bearer {{accessToken}}
+          disabled: true
+      body:
+        type: json
+        data: |-
+          {
+              "longitude": 106.895081,
+              "latitude": -6.19674
+          }
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Server
+          value: nginx/1.14.1
+        - name: Date
+          value: Wed, 25 Mar 2026 13:11:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "66"
+        - name: Connection
+          value: keep-alive
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, POST, OPTIONS
+        - name: Access-Control-Allow-Headers
+          value: Origin, Content-Type, Accept, Authorization, parent-id
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": 404,
+              "returnMessage": "Record Not Found",
+              "data": null
+          }
+  - name: FAT Not Found
+    request:
+      url: http://10.10.4.2/amt/1.1/hpm/geographicSiteManagement/v1/fatFeasibility?long=106.9423&lat=231
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Authorization
+          value: Bearer {{accessToken}}
+          disabled: true
+      params:
+        - name: long
+          value: "106.9423"
+          type: query
+        - name: lat
+          value: "231"
+          type: query
+      body:
+        type: json
+        data: "{
+
+          \    \"latitude\": 3.522567,
+
+          \    \"longitude\": 98.672761
+
+          }
+
+          \ \ 
+
+          \  "
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Server
+          value: nginx/1.14.1
+        - name: Date
+          value: Tue, 31 Mar 2026 03:34:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "59"
+        - name: Connection
+          value: keep-alive
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, POST, PUT, DELETE, PATCH, OPTIONS
+        - name: Access-Control-Allow-Headers
+          value: Origin, Content-Type, Accept, Authorization, parent-id
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": "HPM-ERR-8",
+              "returnMessage": "FAT not found"
+          }
+  - name: Check Homepass by LongLat FAT
+    request:
+      url: http://10.10.4.2/amt/1.1/hpm/geographicSiteManagement/v1/fatFeasibility?long=110.41264838060597&lat=-6.958960648143709
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Authorization
+          value: Bearer {{accessToken}}
+          disabled: true
+      params:
+        - name: long
+          value: "110.41264838060597"
+          type: query
+        - name: lat
+          value: "-6.958960648143709"
+          type: query
+      body:
+        type: json
+        data: "{
+
+          \    \"latitude\": 3.522567,
+
+          \    \"longitude\": 98.672761
+
+          }
+
+          \ \ 
+
+          \  "
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.14.1
+        - name: Date
+          value: Tue, 31 Mar 2026 03:34:33 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "692"
+        - name: Connection
+          value: keep-alive
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: GET, POST, PUT, DELETE, PATCH, OPTIONS
+        - name: Access-Control-Allow-Headers
+          value: Origin, Content-Type, Accept, Authorization, parent-id
+        - name: Access-Control-Allow-Credentials
+          value: "true"
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": "HPM-200",
+              "returnMessage": "Success",
+              "body": {
+                  "id": "4228007902",
+                  "href": null,
+                  "name": "KUN04.01.02.01",
+                  "description": null,
+                  "status": "active",
+                  "@baseType": "homepass",
+                  "relatedParty": "AMT14SMG0264",
+                  "siteRelationShip": "2228000421",
+                  "address": {
+                      "streetName": null,
+                      "postcode": "50176",
+                      "city": "KOTA SEMARANG",
+                      "stateOrProvince": "JAWA TENGAH",
+                      "country": "Indonesia",
+                      "district": "SEMARANG UTARA",
+                      "ward": "KUNINGAN"
+                  },
+                  "geographicLocation": {
+                      "id": "932629",
+                      "name": "KUNINGAN",
+                      "geometry": "POINT(110.412646 -6.959032)",
+                      "latitude": -6.959032,
+                      "longitude": 110.412646
+                  },
+                  "brandName": null,
+                  "deviceStatus": null,
+                  "validation": false,
+                  "siteName": "KUNINGAN RW 4",
+                  "totalPort": 16,
+                  "totalOccupiedPort": 0,
+                  "totalPortAvailable": 16
+              }
+          }
+
+docs: |-
+  Generated from cURL: curl --location 'http://10.10.2.22/amt/1.1/hpm/homepass/feasibility' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: ••••••' \
+  --data '{
+      "longitude": 106.774902,
+      "latitude": -6.254953
+
+  }'

@@ -1,0 +1,28 @@
+info:
+  name: CREATE
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/single_ticket"
+  body:
+    type: json
+    data: |-
+      {
+          "severity": "Minor",
+          "subject": "",
+          "description": "",
+          "customer_id": "",
+          "case_number": "",
+          "fhid": ""
+      }
+  auth:
+    type: bearer
+    token: 16023c3967097019e2671666b2ec4e2b2f555b7f31a413eb51baee812da9cf96
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

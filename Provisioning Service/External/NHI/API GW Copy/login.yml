@@ -1,0 +1,155 @@
+info:
+  name: login
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://apigw.asianet.co.id:9443/api/external/singleview/login
+  headers:
+    - name: Accept
+      value: "*/*"
+    - name: Accept-Language
+      value: en-GB,en;q=0.9,id-ID;q=0.8,id;q=0.7,en-US;q=0.6
+    - name: Connection
+      value: keep-alive
+    - name: Content-Type
+      value: application/json
+    - name: Origin
+      value: http://localhost:3000
+    - name: Referer
+      value: http://localhost:3000/spv-app/login
+    - name: Sec-Fetch-Dest
+      value: empty
+    - name: Sec-Fetch-Mode
+      value: cors
+    - name: Sec-Fetch-Site
+      value: same-origin
+    - name: User-Agent
+      value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+    - name: sec-ch-ua
+      value: '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"'
+    - name: sec-ch-ua-mobile
+      value: ?0
+    - name: sec-ch-ua-platform
+      value: '"Windows"'
+    - name: Cookie
+      value: _ga=GA1.1.1227276600.1737551583; _ga_T7KBN84VNY=GS2.1.s1759298567$o3$g1$t1759299021$j60$l0$h0; isLoggedIn=true; __next_hmr_refresh_hash__=22e3351854e981e2663a8c5bf8fb36eb633457081244afec
+  body:
+    type: json
+    data: |-
+      {
+          "email": "gradeplus@asianet.co.id",
+          "password": "Amt@2026"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.getStatus() === 200) {
+            const jsonData = res.getBody();
+            const accessToken = jsonData.token;
+            bru.collectionVariables.set("nhiAPIGWAccessToken", accessToken);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: login
+    request:
+      url: https://apigw.asianet.co.id:9443/api/external/singleview/login
+      method: POST
+      headers:
+        - name: Accept
+          value: "*/*"
+        - name: Accept-Language
+          value: en-GB,en;q=0.9,id-ID;q=0.8,id;q=0.7,en-US;q=0.6
+        - name: Connection
+          value: keep-alive
+        - name: Content-Type
+          value: application/json
+        - name: Origin
+          value: http://localhost:3000
+        - name: Referer
+          value: http://localhost:3000/spv-app/login
+        - name: Sec-Fetch-Dest
+          value: empty
+        - name: Sec-Fetch-Mode
+          value: cors
+        - name: Sec-Fetch-Site
+          value: same-origin
+        - name: User-Agent
+          value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+        - name: sec-ch-ua
+          value: '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"'
+        - name: sec-ch-ua-mobile
+          value: ?0
+        - name: sec-ch-ua-platform
+          value: '"Windows"'
+        - name: Cookie
+          value: _ga=GA1.1.1227276600.1737551583; _ga_T7KBN84VNY=GS2.1.s1759298567$o3$g1$t1759299021$j60$l0$h0; isLoggedIn=true; __next_hmr_refresh_hash__=22e3351854e981e2663a8c5bf8fb36eb633457081244afec
+      body:
+        type: json
+        data: |-
+          {
+              "email": "raden@technovasolusi.id",
+              "password": "Amt@2025"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: vary
+          value: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+        - name: set-cookie
+          value: isLoggedIn=true; Path=/
+        - name: Date
+          value: Sun, 29 Mar 2026 19:33:59 GMT
+        - name: Server
+          value: APISIX/3.9.1
+      body:
+        type: json
+        data: |-
+          {
+              "success": true,
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzc0ODEyODM5LCJleHAiOjE3NzU0MTc2Mzl9.bu2Vzvqf6A9wBPitYmCzcBN1N7Oyx0RPMbf_sT4MDwA",
+              "user": {
+                  "id": 1416,
+                  "name": "Raden Fikri",
+                  "email": "raden@technovasolusi.id",
+                  "department": "Service Delivery",
+                  "level": "admin",
+                  "vendor": "",
+                  "region": "HQ"
+              }
+          }
+
+docs: |-
+  Generated from cURL: curl 'http://localhost:3000/spv-app/api/login' \
+    -H 'Accept: */*' \
+    -H 'Accept-Language: en-GB,en;q=0.9,id-ID;q=0.8,id;q=0.7,en-US;q=0.6' \
+    -H 'Connection: keep-alive' \
+    -H 'Content-Type: application/json' \
+    -b '_ga=GA1.1.1227276600.1737551583; _ga_T7KBN84VNY=GS2.1.s1759298567$o3$g1$t1759299021$j60$l0$h0; isLoggedIn=true; __next_hmr_refresh_hash__=22e3351854e981e2663a8c5bf8fb36eb633457081244afec' \
+    -H 'Origin: http://localhost:3000' \
+    -H 'Referer: http://localhost:3000/spv-app/login' \
+    -H 'Sec-Fetch-Dest: empty' \
+    -H 'Sec-Fetch-Mode: cors' \
+    -H 'Sec-Fetch-Site: same-origin' \
+    -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36' \
+    -H 'sec-ch-ua: "Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"' \
+    -H 'sec-ch-ua-mobile: ?0' \
+    -H 'sec-ch-ua-platform: "Windows"' \
+    --data-raw '{"email":"raden@technovasolusi.id","password":"Amt@2025"}'

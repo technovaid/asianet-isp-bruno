@@ -1,0 +1,178 @@
+info:
+  name: Get Work Schedule
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://10.10.4.2/amt/1.1/apm/getWorkOrderSched
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnZpcm9ubWVudCI6ImRldiIsImV4cCI6MTc3NDQzNzgwOSwiZGF0YSI6eyJ1c2VySWQiOiI4M2E1ZDQ2ODM3YmVmMWUxZGNjM2U3ZTI3ZjdhZTM3YyIsImVtYWlsIjoiYW10dGVzdEBhc2lhbmV0LmNvLmlkIiwiYXBwbGljYXRpb24iOiJBTEwiLCJyb2xlIjoic3VwZXJBZG1pbiIsInBlcm1pc3Npb24iOnt9LCJwZXJtaXNzaW9uRXh0ZW5kZWQiOnsiQVRNIjp7ImltcGVyc29uYXRlIjpbImM5MTA0ZDlkYThjZTczZTgxZmZjNzg3MjcwNmY4M2MyIiwiMmM3NDZkNjc1M2QxZDU3NDAwMDBjOGU2ODFmOTRlYjkiLCIwNzUzZmVkNzk5MThiODAyY2I4OTE4NGFmMzE4NjAyNyIsIjBhYmMzODk3NjQ4NDIyNjY4ODQwNDYwODA2ZTAzZWU3IiwiMTUwOGRhMmQ3NzYwYzAyYmNiNWVmM2VlNzI3NjVkMjIiLCIyYzc0NmQ2NzUzZDFkNTc0MDAwMGM4ZTY4MWY5NGViOSIsIjR1NGRvZ3duMmFtdWZpMTNrdjV5dzM5czZ2NHc3NyIsIjUxNDdlYzI1OGQ0YjM0ZTczOTkzMzA5YjJiYmY3NDdhIiwiNjI3ZDBmMjQxNzY1N2FhODk1YjJmNTUyNzU5Y2ZiNjciLCI4ZWIyZDhjMDNjOGI2Mzg0MWZmNjQwZDlhNTgwNzRmMSIsIjkwMTY0NWIzOWI5NmI3YjZlYWRlNDg2NGU0NjkyZTBmIiwiOTBjMzFkZmY5OTdhOTA0YjNiNjE3M2MzMDY3NDAxOTQiLCJhYnE2MW85MmY1NnJlOW5qMGFnNzBoNHo1MnVrMGoiLCJhZjQ0M2NjM2QyZTJkZTY3ZDQ3Y2IyNmIyNzhkNWZmYyIsImM5MWU1YTRhMTQ1NzI4NmVjNmYxNDE1YmU4NGZmYjA5IiwiYzljMGY0NjkzMGE2ZTllZDA5ZjU5NWM0MDgwY2E2NGQiLCJkYjNkMWJiYzhiY2U1YTYwYWI0ZTI0MzI0OWY3MmU5ZiIsImUxZTUzYzVmZTBkMTc4OWRkM2Q3OTI0ZjU3YWUwMmQzIiwiZTVjYWU0YTQzOGRjOTc5MTRiZTA5NmE1YWM1ODFhNjgiLCI0OTQwZDMyMzdlODk2OGNlNGY2NjliYjE4MjI4MmNiMCIsImYwYTJmODllZDE0NGUxNmE4YjQ5NDg4YjgwOTBkZTg5IiwiZndtYm4xeTY2NjFwbXFwNGg5czlzdWI3dmc4cGs1IiwicG5lbHEwdTM3Nzg4ZWFlbzMwa3VmYnV5MGhjeGQ3dngiLCJ0bWFzcDQ0OTBjZWNzcnZjd29neGMycHQyMWNhZ3oiLCIxZWI1YmZiYzM2YzVkZmYzMmI5ZTg0YTUzYzA4N2ZkZiIsIjk5NTRkNjdjYWZiYjM1ZTNlY2RlZDljOGUxNjA0ZGVlIiwiZTI2NWY2YzA5NTEzNjI3NGM1NjZjMjFkMzc2ZTU3ZmMiLCIzYTZlZmM2YzQwNDU4ZGQzNmZkOGY0NDhkMzJlNTBhOSJdLCJyb2xlIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwidXNlciI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl19LCJPRE0iOnsiYWN0aW9uIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwiYWxsQ2xpZW50Ijp0cnVlLCJhbGxPcmRlckluZm8iOnRydWUsImFsbFJlZ2lvbiI6dHJ1ZSwiY2xpZW50TWFwcGluZyI6W10sInJlZ2lvbiI6W119LCJQTU0iOnsiYWNzQ29uZmlnIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwicHJvZmlsZUNvbmZpZyI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl0sInZsYW5Db25maWciOlsiY3JlYXRlIiwicmVhZCIsInVwZGF0ZSIsImRlbGV0ZSJdfSwiVFRNIjp7ImFjdGlvbiI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl0sImNhbkFzc2lnblRpY2tldCI6ZmFsc2UsImNsaWVudE1hcHBpbmciOltdLCJjbGllbnRNYXBwaW5nQWxsIjpmYWxzZSwicmVnaW9uIjpbXSwicmVnaW9uQWxsIjp0cnVlLCJ0aWNrZXRBZ2VudFJvbGVOYW1lIjpbIkFnZW50IEJSTyIsIkFnZW50IENKUk8iLCJBZ2VudCBKUk8iXSwidXBkYXRlRmllbGQiOltdLCJ1cGRhdGVGaWVsZEFsbCI6dHJ1ZX19fX0.badX-__HcUS2JZN70My-vMu-rqFE1h4i0xINKlmy9lLqsoDY5FRYkBr-x_91e7l3j7axTvJQvhGF9BIqqcFFZCLSrrIsZ1vl0wc74zEizAYHL0tq85t0IvTUQdyQOuhOgTCzSxXsky0tfPWZ6OJUoa1z7RiBYtPJdJPrsOGXHkVw2XupYb4k5JtTBxfXX1-wKQk5li6q9PbyN_DMiYH-KGVGnJf3zV9qdZoVxK4Q9Eqm5iJXNSJ2ztN9-3PtdqDu1i9yp0Uq0ZEAnL0gCqIsJ1V4Kyn4jIbT-Sg2yZSeNC_A8M0Iy7kPlK4NmIDMZdxOVU5BA8ovGKeW8fQNohyGWQ
+      disabled: true
+  body:
+    type: json
+    data: '{"siteName":"PERUMAHAN TELAGA BESTARI RW03","subSiteName":"","scheduleDuration":30,"version":1}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Get Work Schedule
+    request:
+      url: http://10.10.4.2/amt/1.1/apm/getWorkOrderSched
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnZpcm9ubWVudCI6ImRldiIsImV4cCI6MTc3NDQzNzgwOSwiZGF0YSI6eyJ1c2VySWQiOiI4M2E1ZDQ2ODM3YmVmMWUxZGNjM2U3ZTI3ZjdhZTM3YyIsImVtYWlsIjoiYW10dGVzdEBhc2lhbmV0LmNvLmlkIiwiYXBwbGljYXRpb24iOiJBTEwiLCJyb2xlIjoic3VwZXJBZG1pbiIsInBlcm1pc3Npb24iOnt9LCJwZXJtaXNzaW9uRXh0ZW5kZWQiOnsiQVRNIjp7ImltcGVyc29uYXRlIjpbImM5MTA0ZDlkYThjZTczZTgxZmZjNzg3MjcwNmY4M2MyIiwiMmM3NDZkNjc1M2QxZDU3NDAwMDBjOGU2ODFmOTRlYjkiLCIwNzUzZmVkNzk5MThiODAyY2I4OTE4NGFmMzE4NjAyNyIsIjBhYmMzODk3NjQ4NDIyNjY4ODQwNDYwODA2ZTAzZWU3IiwiMTUwOGRhMmQ3NzYwYzAyYmNiNWVmM2VlNzI3NjVkMjIiLCIyYzc0NmQ2NzUzZDFkNTc0MDAwMGM4ZTY4MWY5NGViOSIsIjR1NGRvZ3duMmFtdWZpMTNrdjV5dzM5czZ2NHc3NyIsIjUxNDdlYzI1OGQ0YjM0ZTczOTkzMzA5YjJiYmY3NDdhIiwiNjI3ZDBmMjQxNzY1N2FhODk1YjJmNTUyNzU5Y2ZiNjciLCI4ZWIyZDhjMDNjOGI2Mzg0MWZmNjQwZDlhNTgwNzRmMSIsIjkwMTY0NWIzOWI5NmI3YjZlYWRlNDg2NGU0NjkyZTBmIiwiOTBjMzFkZmY5OTdhOTA0YjNiNjE3M2MzMDY3NDAxOTQiLCJhYnE2MW85MmY1NnJlOW5qMGFnNzBoNHo1MnVrMGoiLCJhZjQ0M2NjM2QyZTJkZTY3ZDQ3Y2IyNmIyNzhkNWZmYyIsImM5MWU1YTRhMTQ1NzI4NmVjNmYxNDE1YmU4NGZmYjA5IiwiYzljMGY0NjkzMGE2ZTllZDA5ZjU5NWM0MDgwY2E2NGQiLCJkYjNkMWJiYzhiY2U1YTYwYWI0ZTI0MzI0OWY3MmU5ZiIsImUxZTUzYzVmZTBkMTc4OWRkM2Q3OTI0ZjU3YWUwMmQzIiwiZTVjYWU0YTQzOGRjOTc5MTRiZTA5NmE1YWM1ODFhNjgiLCI0OTQwZDMyMzdlODk2OGNlNGY2NjliYjE4MjI4MmNiMCIsImYwYTJmODllZDE0NGUxNmE4YjQ5NDg4YjgwOTBkZTg5IiwiZndtYm4xeTY2NjFwbXFwNGg5czlzdWI3dmc4cGs1IiwicG5lbHEwdTM3Nzg4ZWFlbzMwa3VmYnV5MGhjeGQ3dngiLCJ0bWFzcDQ0OTBjZWNzcnZjd29neGMycHQyMWNhZ3oiLCIxZWI1YmZiYzM2YzVkZmYzMmI5ZTg0YTUzYzA4N2ZkZiIsIjk5NTRkNjdjYWZiYjM1ZTNlY2RlZDljOGUxNjA0ZGVlIiwiZTI2NWY2YzA5NTEzNjI3NGM1NjZjMjFkMzc2ZTU3ZmMiLCIzYTZlZmM2YzQwNDU4ZGQzNmZkOGY0NDhkMzJlNTBhOSJdLCJyb2xlIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwidXNlciI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl19LCJPRE0iOnsiYWN0aW9uIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwiYWxsQ2xpZW50Ijp0cnVlLCJhbGxPcmRlckluZm8iOnRydWUsImFsbFJlZ2lvbiI6dHJ1ZSwiY2xpZW50TWFwcGluZyI6W10sInJlZ2lvbiI6W119LCJQTU0iOnsiYWNzQ29uZmlnIjpbImNyZWF0ZSIsInJlYWQiLCJ1cGRhdGUiLCJkZWxldGUiXSwicHJvZmlsZUNvbmZpZyI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl0sInZsYW5Db25maWciOlsiY3JlYXRlIiwicmVhZCIsInVwZGF0ZSIsImRlbGV0ZSJdfSwiVFRNIjp7ImFjdGlvbiI6WyJjcmVhdGUiLCJyZWFkIiwidXBkYXRlIiwiZGVsZXRlIl0sImNhbkFzc2lnblRpY2tldCI6ZmFsc2UsImNsaWVudE1hcHBpbmciOltdLCJjbGllbnRNYXBwaW5nQWxsIjpmYWxzZSwicmVnaW9uIjpbXSwicmVnaW9uQWxsIjp0cnVlLCJ0aWNrZXRBZ2VudFJvbGVOYW1lIjpbIkFnZW50IEJSTyIsIkFnZW50IENKUk8iLCJBZ2VudCBKUk8iXSwidXBkYXRlRmllbGQiOltdLCJ1cGRhdGVGaWVsZEFsbCI6dHJ1ZX19fX0.badX-__HcUS2JZN70My-vMu-rqFE1h4i0xINKlmy9lLqsoDY5FRYkBr-x_91e7l3j7axTvJQvhGF9BIqqcFFZCLSrrIsZ1vl0wc74zEizAYHL0tq85t0IvTUQdyQOuhOgTCzSxXsky0tfPWZ6OJUoa1z7RiBYtPJdJPrsOGXHkVw2XupYb4k5JtTBxfXX1-wKQk5li6q9PbyN_DMiYH-KGVGnJf3zV9qdZoVxK4Q9Eqm5iJXNSJ2ztN9-3PtdqDu1i9yp0Uq0ZEAnL0gCqIsJ1V4Kyn4jIbT-Sg2yZSeNC_A8M0Iy7kPlK4NmIDMZdxOVU5BA8ovGKeW8fQNohyGWQ
+          disabled: true
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+              "siteName": "BINTARA RW 6",
+              "startDate": "2026-03-24",
+              "endDate": "2026-03-24",
+              "version": 2,
+              "orderType": "installation"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.14.1
+        - name: Date
+          value: Tue, 31 Mar 2026 03:39:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1698"
+        - name: Connection
+          value: keep-alive
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": "APM-200",
+              "returnMessage": "Success",
+              "body": {
+                  "available": [
+                      {
+                          "scheduleID": "202603241437",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 1,
+                          "teamID": 437,
+                          "teamName": "SVM_KOTABKS1",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603242437",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 2,
+                          "teamID": 437,
+                          "teamName": "SVM_KOTABKS1",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603243437",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 3,
+                          "teamID": 437,
+                          "teamName": "SVM_KOTABKS1",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603244437",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 4,
+                          "teamID": 437,
+                          "teamName": "SVM_KOTABKS1",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603245437",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 5,
+                          "teamID": 437,
+                          "teamName": "SVM_KOTABKS1",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603241438",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 1,
+                          "teamID": 438,
+                          "teamName": "SVM_KOTABKS2",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603242438",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 2,
+                          "teamID": 438,
+                          "teamName": "SVM_KOTABKS2",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603243438",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 3,
+                          "teamID": 438,
+                          "teamName": "SVM_KOTABKS2",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603244438",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 4,
+                          "teamID": 438,
+                          "teamName": "SVM_KOTABKS2",
+                          "vendorName": "SVM"
+                      },
+                      {
+                          "scheduleID": "202603245438",
+                          "scheduledDate": "2026-03-24",
+                          "slotID": 5,
+                          "teamID": 438,
+                          "teamName": "SVM_KOTABKS2",
+                          "vendorName": "SVM"
+                      }
+                  ],
+                  "slot": [
+                      {
+                          "id": 1,
+                          "name": "SLOT - 1 (08:00 - 10:00)",
+                          "alias": "08:00 - 10:00"
+                      },
+                      {
+                          "id": 2,
+                          "name": "SLOT - 2 (10:00 - 12:00)",
+                          "alias": "10:00 - 12:00"
+                      },
+                      {
+                          "id": 3,
+                          "name": "SLOT - 3 (12:00 - 14:00)",
+                          "alias": "12:00 - 14:00"
+                      },
+                      {
+                          "id": 4,
+                          "name": "SLOT - 4 (14:00 - 16:00)",
+                          "alias": "14:00 - 16:00"
+                      },
+                      {
+                          "id": 5,
+                          "name": "SLOT - 5 (16:00 - 18:00)",
+                          "alias": "16:00 - 18:00"
+                      }
+                  ]
+              }
+          }

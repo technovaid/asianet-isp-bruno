@@ -1,0 +1,39 @@
+info:
+  name: Unsuspend Subscriber
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{base_url}}/aaa_db/subscribers/{{account_id}}/unsuspend"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "reason": "Invoice settled",
+        "requested_by": "billing-system"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 OK
+    request:
+      url: ""
+      method: PUT
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: '{ "status": "success", "account_status": "active", "message": "Subscriber reactivated. AAA account is now active." }'
+
+docs: Reverses a suspension — sets `account_status` back to `active` and re-enables AAA access.

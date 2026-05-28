@@ -1,0 +1,72 @@
+info:
+  name: OTP Send
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://service-chat.qontak.com/api/open/v1/broadcasts/whatsapp/direct
+  headers:
+    - name: Authorization
+      value: Bearer 5LzenY0VHA_7q_gR0mWFx4FFWlUwOlHKA6V9MrIRpZE
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "to_number": "628567438275",
+          "to_name": "OTP",
+          "message_template_id": "e51c6e88-4104-42fb-ac4a-abdfdce72600",
+          "channel_integration_id": "d0314751-cc3e-4cf1-8f64-014c14f195dd",
+          "language": {
+              "code": "id"
+          },
+          "parameters": {
+              "body": [
+                  {
+                      "key": "1",
+                      "value": "otp_code",
+                      "value_text": "231643"
+                  }
+              ],
+              "buttons": [
+                  {
+                      "index": "0",
+                      "type": "url",
+                      "value": "231643"
+                  }
+              ]
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Generated from cURL: curl --request POST \
+    --url https://service-chat.qontak.com/api/open/v1/broadcasts/whatsapp/direct \
+    --header 'Authorization: Bearer 5LzenY0VHA_7q_gR0mWFx4FFWlUwOlHKA6V9MrIRpZE' \
+    --header 'Content-Type: application/json' \
+    --data '{
+    "to_number": "628567438275",
+    "to_name": "Burhanudin Hakim",
+    "message_template_id": "e51c6e88-4104-42fb-ac4a-abdfdce72600",
+    "channel_integration_id": "d0314751-cc3e-4cf1-8f64-014c14f195dd",
+    "language": {
+      "code": "id"
+    },
+    "parameters": {
+      "body": [
+        {
+          "key": "1",
+          "value": "otp_code",
+          "value_text": "231643"
+        }
+      ]
+    }
+  }'

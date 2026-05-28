@@ -1,0 +1,79 @@
+info:
+  name: Feasibility
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8085/feasibility
+  body:
+    type: json
+    data: |-
+      {
+          "customer_id": "abc",
+          "product_id": "bca",
+          "latitude": -6.958960648143709,
+          "longitude": 110.41264838060597
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Feasibility
+    request:
+      url: http://localhost:8085/feasibility
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+              "customer_id": "abc",
+              "product_id": "bca",
+              "latitude": -6.958960648143709,
+              "longitude": 110.41264838060597
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Date
+          value: Thu, 02 Apr 2026 00:23:09 GMT
+        - name: Content-Length
+          value: "510"
+      body:
+        type: json
+        data: |-
+          {
+              "success": true,
+              "message": "feasibility check completed",
+              "data": {
+                  "serviceAvailability": "Services Available",
+                  "siteName": "KUNINGAN RW 4",
+                  "siteID": "2228000421",
+                  "relatedParty": "AMT14SMG0264",
+                  "address": {
+                      "postcode": "50176",
+                      "city": "KOTA SEMARANG",
+                      "stateOrProvince": "JAWA TENGAH",
+                      "country": "Indonesia",
+                      "district": "SEMARANG UTARA",
+                      "ward": "KUNINGAN"
+                  },
+                  "location": {
+                      "id": "932629",
+                      "name": "KUNINGAN",
+                      "geometry": "POINT(110.412646 -6.959032)",
+                      "latitude": -6.959032,
+                      "longitude": 110.412646
+                  },
+                  "totalPort": 16,
+                  "totalPortAvailable": 16
+              }
+          }

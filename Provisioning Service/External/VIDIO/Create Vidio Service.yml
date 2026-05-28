@@ -1,0 +1,125 @@
+info:
+  name: Create Vidio Service
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://api.staging.vidio.com/partner/transactions
+  headers:
+    - name: X-API-AUTH
+      value: cubixarIhu8une5OP33upogocaTeWerU
+    - name: Content-Type
+      value: application/vnd.api+json
+  body:
+    type: json
+    data: |-
+      {
+          "user_identifier": "960eedf0-1ba9-4690-9613-43beb71ff31e",
+          "user_identifier_type": "partner_id",
+          "partner_transaction_id": "tx-abcd",
+          "keyword": "IPTASVIBBAS301P",
+          "user_info_type": "msisdn",
+          "user_info": "6282117235227"
+      }
+  auth:
+    type: bearer
+    token: ory_at_bMiXjBJzhaq_TWAi9S6cemAPq3Lgar6R9rDQqYujKi0.9qZLeEqxZDuRkrbFDdZURoOOKjucswbWtmaBMzod64g
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Create Vidio Service
+    request:
+      url: https://api.staging.vidio.com/partner/transactions
+      method: POST
+      headers:
+        - name: X-API-AUTH
+          value: cubixarIhu8une5OP33upogocaTeWerU
+        - name: Content-Type
+          value: application/vnd.api+json
+      body:
+        type: json
+        data: |-
+          {
+              "data": {
+                  "type": "partner_transaction",
+                  "attributes": {
+                      "user_identifier_type": "partner_id",
+                      "user_identifier": "960eedf0-1ba9-4690-9613-43beb71ff31e",
+                      "partner_transaction_id": "TX-ASIANET-1234567",
+                      "keyword": "IPTASVIBBAS301P", // product
+                      "user_info_type": "msisdn",
+                      "user_info": "081234567890"
+                  }
+              }
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: server
+          value: nginx
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: referrer-policy
+          value: strict-origin-when-cross-origin
+        - name: x-varnish-grace-duration
+          value: 7200s
+        - name: x-robots-tag
+          value: noindex
+        - name: content-language
+          value: id
+        - name: cache-control
+          value: max-age=0, private, must-revalidate
+        - name: x-request-id
+          value: 6cf0b96c-2ea2-4f7b-9bb0-a5305ed70abe
+        - name: x-runtime
+          value: "0.271641"
+        - name: server-node
+          value: vidio-web-int-ig-zjd2
+        - name: content-encoding
+          value: gzip
+        - name: date
+          value: Tue, 31 Mar 2026 12:46:31 GMT
+        - name: set-cookie
+          value: _staging_vidio_session=%2FbYayjbrySjU4x9pvROIy2ywBXM2oBlkLoHF8xJjAT3%2FUdAQpnlPEjcYro4WEr6jr%2F%2BWeJV0BJ2xQn8SA0lZ7v%2FwFMlXpi9OMTc8KdKYv7eHcmHEfdUnQ54%2FE7%2BVumovDL0%2Bc8SywDLx7qQILNPO7rY4zikEiTvi73QsP%2FedhmNLClmB4JSPNxJffLfoTmGnZclldcRfc%2FkxcJnqRvZBssmZw4dY3eD4B8d7gtMgZuKSiA%3D%3D--O%2BUGC3z%2FUGqlo3RH--yMD%2FsPI839xnopQV66T2zA%3D%3D; domain=.staging.vidio.com; path=/; secure; HttpOnly; SameSite=Lax
+        - name: vary
+          value: Accept-Encoding, Accept-Language, X-Requested-With, Origin, X-API-Platform, X-Secure-Level, X-API-Auth, X-Country-Id,X-Country-Alpha2, X-User-Login,X-View-Profile, X-Variation-Type,X-Profile-Id
+        - name: x-user-agent
+          value: PostmanRuntime/7.51.1
+        - name: via
+          value: 1.1 google
+        - name: Alt-Svc
+          value: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "data": {
+                  "type": "partner_transaction",
+                  "attributes": {
+                      "user_identifier": "960eedf0-1ba9-4690-9613-43beb71ff31e",
+                      "user_identifier_type": "partner_id",
+                      "partner_transaction_id": "TX-ASIANET-1234567",
+                      "keyword": "IPTASVIBBAS301P",
+                      "vidio_transaction_id": "51026d6911f8fd217d444aff",
+                      "expired_date": "2026-04-30T23:59:59.999+07:00",
+                      "message": ""
+                  }
+              }
+          }

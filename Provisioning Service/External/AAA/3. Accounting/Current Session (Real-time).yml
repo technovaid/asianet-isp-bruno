@@ -1,0 +1,55 @@
+info:
+  name: Current Session (Real-time)
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}/aaa_db/subs_accounting/{{account_id}}/current-session"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 OK
+    request:
+      url: ""
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: |-
+          {
+            "status": "success",
+            "account_id": "ACC-001234",
+            "accounting_id": 1024,
+            "session_id": "SES-ABC123456",
+            "session_status": "active",
+            "session_start": "2024-07-20T08:05:00Z",
+            "duration_seconds": 14400,
+            "bandwidth_up_kbps": 20480,
+            "bandwidth_dn_kbps": 102400,
+            "bytes_in": 1073741824,
+            "bytes_out": 214748364,
+            "framed_ip": "10.10.1.55",
+            "nas_ip": "192.168.1.1",
+            "nas_port": "0/1/0/1"
+          }
+  - name: 404 No Active Session
+    request:
+      url: ""
+      method: GET
+    response:
+      status: 404
+      statusText: Not Found
+      body:
+        type: text
+        data: '{ "status": "error", "code": "NO_ACTIVE_SESSION", "message": "No active session found for account_id ACC-001234." }'
+
+docs: Returns the currently active session record from `subs_accounting` for a given subscriber, including live bandwidth usage and session status.

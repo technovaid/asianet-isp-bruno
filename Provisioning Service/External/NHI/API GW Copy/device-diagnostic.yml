@@ -1,0 +1,200 @@
+info:
+  name: device-diagnostic
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: https://apigw.asianet.co.id:9443/api/external/singleview/device-diagnostic?serial_number=ZTEGDA5CFB9E
+  headers:
+    - name: User-Agent
+      value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0NjAwLCJleHAiOjE3NjI4ODk0MDB9.jj_Rii_BLCh5at6uguIrXc4cvItSfRo7HTW7xOwYe-8
+    - name: Referer
+      value: http://10.11.76.8/spv-app/singleview
+  params:
+    - name: serial_number
+      value: ZTEGDA5CFB9E
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: device-diagnostic
+    request:
+      url: http://10.11.76.8/spv-app/api/external/ioh/device-diagnostic?serial_number=ZTEGDA5CFB9E
+      method: GET
+      headers:
+        - name: User-Agent
+          value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+        - name: Authorization
+          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0NjAwLCJleHAiOjE3NjI4ODk0MDB9.jj_Rii_BLCh5at6uguIrXc4cvItSfRo7HTW7xOwYe-8
+        - name: Referer
+          value: http://10.11.76.8/spv-app/singleview
+      params:
+        - name: serial_number
+          value: ZTEGDA5CFB9E
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.18.0 (Ubuntu)
+        - name: Date
+          value: Tue, 04 Nov 2025 21:53:34 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: vary
+          value: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+      body:
+        type: json
+        data: |-
+          {
+              "downloadDiagnostic": {
+                  "taskId": "d:ZTEGDA5CFB9E:40",
+                  "deviceId": "ZTEGDA5CFB9E",
+                  "startTime": "2025-11-04T21:52:41.236Z",
+                  "finishTime": "2025-11-04T21:52:46.547Z",
+                  "lastUpdateTime": "2025-11-04T21:52:46.547Z",
+                  "status": "Warning",
+                  "summary": "Diagnostic finished with warning.",
+                  "blocking": false,
+                  "properties": [
+                      {
+                          "name": "State",
+                          "value": "Error_InitConnectionFailed"
+                      },
+                      {
+                          "name": "startTimeDetail",
+                          "value": "1762293161303"
+                      }
+                  ]
+              },
+              "uploadDiagnostic": {
+                  "taskId": "d:ZTEGDA5CFB9E:39",
+                  "deviceId": "ZTEGDA5CFB9E",
+                  "startTime": "2025-11-04T21:52:41.499Z",
+                  "finishTime": "2025-11-04T21:53:34.462Z",
+                  "lastUpdateTime": "2025-11-04T21:53:34.462Z",
+                  "status": "Success",
+                  "summary": "Diagnostic completed",
+                  "blocking": false,
+                  "properties": [
+                      {
+                          "name": "RawSpeed",
+                          "value": "1588969.425119004"
+                      },
+                      {
+                          "name": "Result.BOMTime",
+                          "value": "1970-01-05T13:09:34.163013"
+                      },
+                      {
+                          "name": "Result.EOMTime",
+                          "value": "1970-01-05T13:10:12.397204"
+                      },
+                      {
+                          "name": "Result.ROMTime",
+                          "value": "1970-01-05T13:09:34.161714"
+                      },
+                      {
+                          "name": "Result.TCPOpenRequestTime",
+                          "value": "1970-01-05T13:09:34.158554"
+                      },
+                      {
+                          "name": "Result.TCPOpenResponseTime",
+                          "value": "1970-01-05T13:09:34.161557"
+                      },
+                      {
+                          "name": "Result.TotalBytesSent",
+                          "value": "60752657"
+                      },
+                      {
+                          "name": "Speed",
+                          "value": "1.6 MB/s"
+                      },
+                      {
+                          "name": "State",
+                          "value": "Complete"
+                      },
+                      {
+                          "name": "TestFileLength",
+                          "value": "52428800"
+                      },
+                      {
+                          "name": "UploadDiagnosticFile",
+                          "value": "UploadDiagnosticFile-d111eef5-534a-44d3-a8ac-5e90489b8ff1"
+                      },
+                      {
+                          "name": "UploadDiagnosticUrl",
+                          "value": "http://10.11.121.62:10301/cpe-r/p/u3NxSCHy/X"
+                      },
+                      {
+                          "name": "startTimeDetail",
+                          "value": "1762293175951"
+                      }
+                  ]
+              },
+              "ipPingDiagnostic": {
+                  "taskId": "d:ZTEGDA5CFB9E:41",
+                  "deviceId": "ZTEGDA5CFB9E",
+                  "startTime": "2025-11-04T21:52:41.434Z",
+                  "finishTime": "2025-11-04T21:52:55.945Z",
+                  "lastUpdateTime": "2025-11-04T21:52:55.945Z",
+                  "status": "Success",
+                  "summary": "Diagnostic completed",
+                  "blocking": false,
+                  "properties": [
+                      {
+                          "name": "Host",
+                          "value": "8.8.8.8"
+                      },
+                      {
+                          "name": "Result.AverageResponseTime",
+                          "value": "15"
+                      },
+                      {
+                          "name": "Result.FailureCount",
+                          "value": "0"
+                      },
+                      {
+                          "name": "Result.MaximumResponseTime",
+                          "value": "17"
+                      },
+                      {
+                          "name": "Result.MinimumResponseTime",
+                          "value": "14"
+                      },
+                      {
+                          "name": "Result.SuccessCount",
+                          "value": "10"
+                      },
+                      {
+                          "name": "State",
+                          "value": "Complete"
+                      },
+                      {
+                          "name": "startTimeDetail",
+                          "value": "1762293166551"
+                      }
+                  ]
+              },
+              "status": 200
+          }
+
+docs: |-
+  Generated from cURL: curl 'http://10.11.76.8/spv-app/api/external/acs-avs-device-info?serial_number=48575443000CC1B5' \
+    -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQxNiwibmFtZSI6IlJhZGVuIEZpa3JpIiwiZW1haWwiOiJyYWRlbkB0ZWNobm92YXNvbHVzaS5pZCIsImRlcGFydG1lbnQiOiJTZXJ2aWNlIERlbGl2ZXJ5IiwibGV2ZWwiOiJhZG1pbiIsInZlbmRvciI6IiIsInJlZ2lvbiI6IkhRIiwiaWF0IjoxNzYyMjg0NjAwLCJleHAiOjE3NjI4ODk0MDB9.jj_Rii_BLCh5at6uguIrXc4cvItSfRo7HTW7xOwYe-8' \
+    -H 'Referer: http://10.11.76.8/spv-app/singleview' \
+    --insecure

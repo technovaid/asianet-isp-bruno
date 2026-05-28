@@ -1,0 +1,71 @@
+info:
+  name: LISTING CURRENT
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url_local}}/mass_outage"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaXRhbiBBZG1pbiAyIiwiZXhwIjoxNzcwNzExNzQ5fQ.mC02kCTHlKSeHWLWSRM5dhaJji-8bEgb-YXV9U8_QTU
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: LISTING CURRENT
+    request:
+      url: "{{url_local}}/mass_outage"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: Referrer-Policy
+          value: strict-origin-when-cross-origin
+        - name: Permissions-Policy
+          value: geolocation=(self), camera=(), microphone=()
+        - name: Cross-Origin-Embedder-Policy
+          value: unsafe-none
+        - name: Cross-Origin-Resource-Policy
+          value: cross-origin
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin-allow-popups
+        - name: Content-Security-Policy
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://maps.googleapis.com https://*.googleapis.com; frame-src 'self' https://www.google.com https://ticketms.asianet.co.id; frame-ancestors 'self'"
+        - name: vary
+          value: RSC, Next-Router-State-Tree, Next-Router-Prefetch
+        - name: content-type
+          value: application/json
+        - name: Date
+          value: Tue, 10 Feb 2026 07:49:44 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          [
+              {
+                  "key": "Dankom-INC_01_20260210-0059",
+                  "incident_id": "INC_01_20260210-0059",
+                  "impact_olt": "BKS-THBOD-OLT1-FX16",
+                  "inc_status": 0,
+                  "created_at": "2026-02-10T13:47:28.000Z",
+                  "partner": "Dankom",
+                  "total": 3
+              }
+          ]

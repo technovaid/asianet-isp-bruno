@@ -1,0 +1,58 @@
+info:
+  name: Update ONT Device
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}/aaa_db/subscribers/{{account_id}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "serial_number": "HWTC1235ABCD",
+        "mac_address": "Aaaa.bbbb.dddd"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 OK
+    request:
+      url: ""
+      method: PUT
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: |-
+          {
+            "status": "success",
+            "account_id": "ACC-001234",
+            "last_modified_date": "2024-06-01T10:30:00Z",
+            "message": "ONT Device updated."
+          }
+  - name: 404 Not Found
+    request:
+      url: ""
+      method: PUT
+    response:
+      status: 404
+      statusText: Not Found
+      body:
+        type: text
+        data: '{ "status": "error", "code": "SUBSCRIBER_NOT_FOUND", "message": "No subscriber found for account_id ACC-001234." }'
+
+docs: |-
+  Updates the ONT device MAC address and serial number for a subscriber.
+
+  All body fields are optional, but at least one must be present.

@@ -1,0 +1,71 @@
+info:
+  name: Login — Get JWT Token
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/authentication/login"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "username": "IT-AMT",
+        "password": "1T4si4n3T@2026!",
+        "authApp": "MySQL",
+        "sessionType": "bearer"
+      }
+
+runtime:
+  variables:
+    - name: base_url
+      value: 192.168.4.58:8443
+  scripts:
+    - type: after-response
+      code: |-
+        var json = res.getBody();
+        if (json.accessToken) {
+            bru.collectionVariables.set('jwt_token', json.accessToken);
+            console.log('JWT token saved to collection variable jwt_token');
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 OK
+    request:
+      url: ""
+      method: POST
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: |-
+          {
+            "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+            "tokenType": "Bearer",
+            "expiresIn": 3600
+          }
+  - name: 401 Unauthorized
+    request:
+      url: ""
+      method: POST
+    response:
+      status: 401
+      statusText: Unauthorized
+      body:
+        type: text
+        data: '{ "message": "Unauthorized", "status": 401 }'
+
+docs: |-
+  Authenticates using MySQL Internal Authentication and returns a JWT Bearer token. The test script automatically stores the token in the `jwt_token` collection variable for use by all other requests.
+
+  **Note:** Tokens expire after 3600 seconds. MRS does not provide refresh tokens — re-run this request when expired.

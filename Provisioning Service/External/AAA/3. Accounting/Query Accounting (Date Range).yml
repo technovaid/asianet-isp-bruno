@@ -1,0 +1,68 @@
+info:
+  name: Query Accounting (Date Range)
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/aaa_db/subs_accounting/{{account_id}}?start_date=2024-06-01&end_date=2024-06-30&session_status=active"
+  params:
+    - name: start_date
+      value: 2024-06-01
+      type: query
+      description: ISO 8601 start date (required)
+    - name: end_date
+      value: 2024-06-30
+      type: query
+      description: ISO 8601 end date (required)
+    - name: session_status
+      value: active
+      type: query
+      description: "Filter by status: active | idle | terminated | failed (optional)"
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 OK
+    request:
+      url: ""
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: |-
+          {
+            "status": "success",
+            "account_id": "ACC-001234",
+            "sessions": [
+              {
+                "accounting_id": 1024,
+                "session_id": "SES-ABC123456",
+                "session_status": "active",
+                "session_start": "2024-07-20T08:05:00Z",
+                "session_end": null,
+                "duration_seconds": 14400,
+                "bandwidth_up_kbps": 20480,
+                "bandwidth_dn_kbps": 102400,
+                "bytes_in": 1073741824,
+                "bytes_out": 214748364,
+                "framed_ip": "10.10.1.55",
+                "nas_ip": "192.168.1.1",
+                "nas_port": "0/1/0/1",
+                "terminate_cause": null
+              }
+            ]
+          }
+
+docs: |-
+  Retrieves accounting records from `subs_accounting` for a given subscriber. Supports filtering by date range and session status. Returns session status, bandwidth up/down, and bytes in/out per session.
+
+  `start_date` and `end_date` are **required**. `session_status` is optional.
